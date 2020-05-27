@@ -465,6 +465,9 @@ public:
         if (this->hasBeenInit)
         {
             String result;
+            bool writeCompleted = false;
+            byte buffer;
+            int testData;
 
             // Controllo la validità dell'indirizzo fornito come parametro
             // e del dato da scrivere
@@ -502,10 +505,21 @@ public:
                     this->setWriteEnable(LOW);
 
                     // Attengo che avvenga la scrittura
-                    // Attendo il valore di TIME_WRITE
-                    delay(TIME_WRITE);
-                    // Tengo conto dell'imprecisione del chip
-                    delayMicroseconds(IMPRECISION);
+                    // Implementazione controllo: Data Pooling
+                    // LETTURA
+                    // Abilito l'output da parte del chip
+                    this->setOutputEnable(HIGH);
+                    while (!writeCompleted)
+                    {
+                        testData = data;
+                        buffer = this->sampleLowLevel();
+                        if (buffer == ((testData & 0b10000000) >> 7))
+                        {
+                            writeCompleted = true;
+                        }
+                    }
+                    // Disabilito l'output da parte del chip
+                    this->setOutputEnable(LOW);
 
                     // Costruisco il risultato (stato della operazione di scrittura)
                     result = "Address: 0x" + String(address, HEX) + " written.";
@@ -820,6 +834,13 @@ private:
         }
 
         return sampleResult;
+    }
+
+    // Metodo per effettuare il campionamento dei dati
+    // in output dal chip low level (byte as working data)
+    byte sampleLowLevel()
+    {
+        return digitalRead(this->dataIO[7]);
     }
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
