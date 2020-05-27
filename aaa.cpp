@@ -30,12 +30,29 @@ class EEPROMManager
 {
     /*USER FILL-IN*/
 private:
-    static constexpr int TIME_HOLD_WRITE_SIGNAL = 0;
-    static constexpr int TIME_WRITE = 0;
-    static constexpr int TIME_RECOVERY_FROM_WRITE = 0;
+    // Timing
+    // Lettura
+    // Il tempo che trascorre tra l'impulso di lettura e l'effettiva presenza
+    // di dati campionabili sui pin di dataIO
+    static constexpr int TIME_WAIT_READ = 1; /*microsecondi*/
+
+    // Il tempo di recupero dopo una lettura
+    static constexpr int TIME_RECOVERY_FROM_READ = 0; /*millisecondi*/
+
+    // Scrittura
+    // Il tempo di hold per far si di generare un segnale di inizio
+    // scrittura valido per il chip
+    static constexpr int TIME_HOLD_WRITE_SIGNAL = 1; /*microsecondi*/
+
+    // Il tempo che impiega il chip fisicamente a scrivere
+    // i dati nella memoria 
+    static constexpr int TIME_WRITE = 1; /*millisecondi*/
+
+    // Il tempo di recupero dopo una scrittura
+    static constexpr int TIME_RECOVERY_FROM_WRITE = 0; /*millisecondi*/
 
     // L'imprecisione, espressa in millisecondi/microsecondi, del chip
-    static constexpr int IMPRECISION = 0;
+    static constexpr int IMPRECISION = 200; /*microsecondi*/
 
     // Il numero di pin di addressing (scelta dell'indirizzo)
     static constexpr int ADDRESSING_PIN = 11;
@@ -317,6 +334,11 @@ public:
                 // Abilito l'output da parte del chip
                 this->setOutputEnable(HIGH);
 
+                // Attendo il valore di TIME_WAIT_READ
+                delayMicroseconds(TIME_WAIT_READ);
+                // Tengo conto dell'imprecisione del chip
+                delayMicroseconds(IMPRECISION);
+
                 // Campiono
                 sampleResult = this->sample();
 
@@ -336,6 +358,11 @@ public:
 
             // Visualizzo a schermo
             Serial.println(result);
+
+            // Attendo il valore di TIME_RECOVERY_FROM_READ
+            delay(TIME_RECOVERY_FROM_READ);
+            // Tengo conto dell'imprecisione del chip
+            delayMicroseconds(IMPRECISION);
         }
     }
 
@@ -372,6 +399,11 @@ public:
                     // Abilito l'output da parte del chip
                     this->setOutputEnable(HIGH);
 
+                    // Attendo il valore di TIME_WAIT_READ
+                    delayMicroseconds(TIME_WAIT_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
+
                     // Campiono
                     sampleResult = this->sample();
 
@@ -383,6 +415,11 @@ public:
                     // semplice da interpretare ed elegante
                     result += format(sampleResult, EEPROMManager::FormatTarget::NOT_HEADER);
                     result += this->resultStringBuilder(baseAddress + offset, sampleResult, EEPROMManager::ReadMode::_HEX, EEPROMManager::ResultStringBuilderSpecification::NOT_INCLUDE_HEADER_INFO) + " ";
+
+                    // Attendo il valore di TIME_RECOVERY_FROM_READ
+                    delay(TIME_RECOVERY_FROM_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
                 }
             }
             else
@@ -393,6 +430,11 @@ public:
 
             // Visualizzo a schermo
             Serial.println(result);
+
+            // Attendo il valore di TIME_RECOVERY_FROM_READ
+            delay(TIME_RECOVERY_FROM_READ);
+            // Tengo conto dell'imprecisione del chip
+            delayMicroseconds(IMPRECISION);
         }
     }
 
@@ -448,15 +490,28 @@ public:
                     // Abilito l'input da parte del chip
                     this->setWriteEnable(HIGH);
 
-                    // Attendo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                    delayMicroseconds(1);
+                    // Attendo il valore di TIME_HOLD_WRITE_SIGNAL
+                    delayMicroseconds(TIME_HOLD_WRITE_SIGNAL);
+                    // Valore al limite superiore del range, dunque non tengo conto
+                    // dell'imprecisione
+                    /*
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
+                    */
 
                     // Disabilito l'input da parte del chip
                     this->setWriteEnable(LOW);
 
+                    // Attengo che avvenga la scrittura
+                    // Attendo il valore di TIME_WRITE
+                    delay(TIME_WRITE);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
+
                     // Costruisco il risultato (stato della operazione di scrittura)
                     result = "Address: 0x" + String(address, HEX) + " written.";
-                    delay(2);
+                    
+
                 }
                 else
                 {
@@ -472,6 +527,11 @@ public:
 
             // Visualizzo a schermo
             Serial.println(result);
+
+            // Attendo il valore di TIME_RECOVERY_FROM_WRITE
+            delay(TIME_RECOVERY_FROM_WRITE);
+            // Tengo conto dell'imprecisione del chip
+            delayMicroseconds(IMPRECISION);
         }
     }
 
@@ -510,12 +570,28 @@ public:
                         // Abilito l'input da parte del chip
                         this->setWriteEnable(HIGH);
 
-                        // Attendo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                        delayMicroseconds(1);
+                        // Attendo il valore di TIME_HOLD_WRITE_SIGNAL
+                        delayMicroseconds(TIME_HOLD_WRITE_SIGNAL);
+                        // Valore al limite superiore del range, dunque non tengo conto
+                        // dell'imprecisione
+                        /*
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
+                        */
 
                         // Disabilito l'input da parte del chip
                         this->setWriteEnable(LOW);
-                        delay(5);
+
+                        // Attengo che avvenga la scrittura
+                        // Attendo il valore di TIME_WRITE
+                        delay(TIME_WRITE);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
+
+                        // Attendo il valore di TIME_RECOVERY_FROM_WRITE
+                        delay(TIME_RECOVERY_FROM_WRITE);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
                     }
 
                     // Costruisco il risultato (stato della operazione di scrittura)
@@ -535,6 +611,11 @@ public:
 
             // Visualizzo a schermo
             Serial.println(result);
+
+            // Attendo il valore di TIME_RECOVERY_FROM_WRITE
+            delay(TIME_RECOVERY_FROM_WRITE);
+            // Tengo conto dell'imprecisione del chip
+            delayMicroseconds(IMPRECISION);
         }
     }
 
