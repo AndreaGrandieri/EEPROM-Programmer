@@ -45,7 +45,7 @@ private:
     static constexpr int TIME_HOLD_WRITE_SIGNAL = 1; /*microsecondi*/
 
     // Il tempo che impiega il chip fisicamente a scrivere
-    // i dati nella memoria 
+    // i dati nella memoria
     static constexpr int TIME_WRITE = 1; /*millisecondi*/
 
     // Il tempo di recupero dopo una scrittura
@@ -72,7 +72,9 @@ private:
 
     // Lista contenente un indirizzo base per ogni segmento readonly usato.
     // Se non usati, lista vuota
-#define LIST_READONLY_SEGMENTS {}
+#define LIST_READONLY_SEGMENTS \
+    {                          \
+    }
 
     /*PADDING*/
     // Il padding permette di visualizzare un output "più elegante"
@@ -1011,13 +1013,6 @@ void setup()
 
     // Setup iniziale dell'istanza per consentirne l'uso
     myEEPROM.init();
-
-    myEEPROM.hardClear(EEPROMManager::ClearMode::HIGHEST_VALUE_FILL);
-    myEEPROM.readAll();
-
-    myEEPROM.writeSegment(0x10, 0x55);
-    myEEPROM.readSegment(0x0);
-    myEEPROM.readSegment(0x10);
 }
 
 void loop()
