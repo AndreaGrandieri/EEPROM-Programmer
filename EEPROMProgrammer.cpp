@@ -44,12 +44,8 @@ private:
     // scrittura valido per il chip
     static constexpr int TIME_HOLD_WRITE_SIGNAL = 1; /*microsecondi*/
 
-    // Il tempo che impiega il chip fisicamente a scrivere
-    // i dati nella memoria
-    static constexpr int TIME_WRITE = 1; /*millisecondi*/
-
     // Il tempo di recupero dopo una scrittura
-    static constexpr int TIME_RECOVERY_FROM_WRITE = 0; /*millisecondi*/
+    static constexpr int TIME_RECOVERY_FROM_WRITE = 1; /*millisecondi*/
 
     // L'imprecisione, espressa in millisecondi/microsecondi, del chip
     static constexpr int IMPRECISION = 200; /*microsecondi*/
@@ -172,7 +168,7 @@ public:
     // Costruttore di default
     EEPROMManager() = delete;
 
-/*
+    /*
     // Costruttore copia
     EEPROMManager(const EEPROMManager &copy)
         : outputEnable(copy.outputEnable), writeEnable(copy.writeEnable),
@@ -508,16 +504,28 @@ public:
                     // LETTURA
                     // Abilito l'output da parte del chip
                     this->setOutputEnable(HIGH);
+
+                    // Attendo il valore di TIME_WAIT_READ
+                    delayMicroseconds(TIME_WAIT_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
+
                     while (!writeCompleted)
                     {
                         buffer = this->sample();
-                        if (buffer == data)
+                        if ((int)ceil(buffer) == data)
                         {
                             writeCompleted = true;
                         }
                     }
+
                     // Disabilito l'output da parte del chip
                     this->setOutputEnable(LOW);
+
+                    // Attendo il valore di TIME_RECOVERY_FROM_READ
+                    delay(TIME_RECOVERY_FROM_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
 
                     // Costruisco il risultato (stato della operazione di scrittura)
                     result = "Address: 0x" + String(address, HEX) + " written.";
@@ -552,6 +560,8 @@ public:
         if (this->hasBeenInit)
         {
             String result;
+            bool writeCompleted = false;
+            double buffer;
 
             // Controllo la validità dell'indirizzo di base fornito come parametro e
             // del dato da scrivere
@@ -592,8 +602,30 @@ public:
                         this->setWriteEnable(LOW);
 
                         // Attengo che avvenga la scrittura
-                        // Attendo il valore di TIME_WRITE
-                        delay(TIME_WRITE);
+                        // Implementazione controllo: Data Pooling
+                        // LETTURA
+                        // Abilito l'output da parte del chip
+                        this->setOutputEnable(HIGH);
+
+                        // Attendo il valore di TIME_WAIT_READ
+                        delayMicroseconds(TIME_WAIT_READ);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
+
+                        while (!writeCompleted)
+                        {
+                            buffer = this->sample();
+                            if ((int)ceil(buffer) == data)
+                            {
+                                writeCompleted = true;
+                            }
+                        }
+
+                        // Disabilito l'output da parte del chip
+                        this->setOutputEnable(LOW);
+
+                        // Attendo il valore di TIME_RECOVERY_FROM_READ
+                        delay(TIME_RECOVERY_FROM_READ);
                         // Tengo conto dell'imprecisione del chip
                         delayMicroseconds(IMPRECISION);
 
@@ -688,6 +720,8 @@ public:
         {
             // Dato da scrivere
             int data;
+            bool writeCompleted = false;
+            double buffer;
 
             // Due diverse modalità di clear:
             // LOWEST_VALUE_FILL: tutta la memoria viene "riempita"
@@ -743,8 +777,30 @@ public:
                     this->setWriteEnable(LOW);
 
                     // Attengo che avvenga la scrittura
-                    // Attendo il valore di TIME_WRITE
-                    delay(TIME_WRITE);
+                    // Implementazione controllo: Data Pooling
+                    // LETTURA
+                    // Abilito l'output da parte del chip
+                    this->setOutputEnable(HIGH);
+
+                    // Attendo il valore di TIME_WAIT_READ
+                    delayMicroseconds(TIME_WAIT_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
+
+                    while (!writeCompleted)
+                    {
+                        buffer = this->sample();
+                        if ((int)ceil(buffer) == data)
+                        {
+                            writeCompleted = true;
+                        }
+                    }
+
+                    // Disabilito l'output da parte del chip
+                    this->setOutputEnable(LOW);
+
+                    // Attendo il valore di TIME_RECOVERY_FROM_READ
+                    delay(TIME_RECOVERY_FROM_READ);
                     // Tengo conto dell'imprecisione del chip
                     delayMicroseconds(IMPRECISION);
 
@@ -832,13 +888,6 @@ private:
         }
 
         return sampleResult;
-    }
-
-    // Metodo per effettuare il campionamento dei dati
-    // in output dal chip low level (byte as working data)
-    byte sampleLowLevel()
-    {
-        return digitalRead(this->dataIO[7]);
     }
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
@@ -1034,6 +1083,9 @@ void setup()
 
     // Setup iniziale dell'istanza per consentirne l'uso
     myEEPROM.init();
+
+    myEEPROM.writeAddress(0, 0x46);
+    myEEPROM.readSegment(0);
 }
 
 void loop()
