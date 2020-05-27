@@ -466,8 +466,7 @@ public:
         {
             String result;
             bool writeCompleted = false;
-            byte buffer;
-            int testData;
+            double buffer;
 
             // Controllo la validità dell'indirizzo fornito come parametro
             // e del dato da scrivere
@@ -511,9 +510,8 @@ public:
                     this->setOutputEnable(HIGH);
                     while (!writeCompleted)
                     {
-                        testData = data;
-                        buffer = this->sampleLowLevel();
-                        if (buffer == ((testData & 0b10000000) >> 7))
+                        buffer = this->sample();
+                        if (buffer == data)
                         {
                             writeCompleted = true;
                         }
