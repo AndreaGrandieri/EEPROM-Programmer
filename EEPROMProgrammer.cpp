@@ -172,6 +172,7 @@ public:
     // Costruttore di default
     EEPROMManager() = delete;
 
+/*
     // Costruttore copia
     EEPROMManager(const EEPROMManager &copy)
         : outputEnable(copy.outputEnable), writeEnable(copy.writeEnable),
@@ -246,6 +247,7 @@ public:
         move.readonlySegments = nullptr;
         this->hasBeenInit = false;
     }
+*/
 
     // Costruttore parametrico
     EEPROMManager(const int &outputEnable, const int &writeEnable, const int &a0, const int &a1,
