@@ -45,7 +45,7 @@ private:
     static constexpr int TIME_HOLD_WRITE_SIGNAL = 1; /*microsecondi*/
 
     // Il tempo di recupero dopo una scrittura
-    static constexpr int TIME_RECOVERY_FROM_WRITE = 1; /*millisecondi*/
+    static constexpr int TIME_RECOVERY_FROM_WRITE = 0; /*millisecondi*/
 
     // L'imprecisione, espressa in millisecondi/microsecondi, del chip
     static constexpr int IMPRECISION = 200; /*microsecondi*/
@@ -462,7 +462,7 @@ public:
         {
             String result;
             bool writeCompleted = false;
-            double buffer;
+            byte buffer;
 
             // Controllo la validità dell'indirizzo fornito come parametro
             // e del dato da scrivere
@@ -499,6 +499,10 @@ public:
                     // Disabilito l'input da parte del chip
                     this->setWriteEnable(LOW);
 
+                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                    // (output da Arduino) e in entrata nel chip (input nel chip)
+                    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
+
                     // Attengo che avvenga la scrittura
                     // Implementazione controllo: Data Pooling
                     // LETTURA
@@ -512,8 +516,8 @@ public:
 
                     while (!writeCompleted)
                     {
-                        buffer = this->sample();
-                        if ((int)ceil(buffer) == data)
+                        buffer = this->sampleLowLevel();
+                        if (buffer == ((data & 0b10000000) >> 7))
                         {
                             writeCompleted = true;
                         }
@@ -560,8 +564,8 @@ public:
         if (this->hasBeenInit)
         {
             String result;
-            bool writeCompleted = false;
-            double buffer;
+            bool writeCompleted;
+            byte buffer;
 
             // Controllo la validità dell'indirizzo di base fornito come parametro e
             // del dato da scrivere
@@ -571,13 +575,15 @@ public:
                 // se il segmento specificato non è readonly (sola lettura)
                 if (!this->isReadonly(baseAddress))
                 {
-                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                    // (output da Arduino) e in entrata nel chip (input nel chip)
-                    this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
-
                     // Continuo per tutta l'estensione del segmento
                     for (int offset = 0; offset < SEGMENT_DEPTH; offset++)
                     {
+                        writeCompleted = false;
+
+                        // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                        // (output da Arduino) e in entrata nel chip (input nel chip)
+                        this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
+
                         // Imposto l'indirizzo di memoria da scrivere
                         this->setAddress(baseAddress + offset);
 
@@ -601,6 +607,10 @@ public:
                         // Disabilito l'input da parte del chip
                         this->setWriteEnable(LOW);
 
+                        // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                        // (output da Arduino) e in entrata nel chip (input nel chip)
+                        this->setDataIO(EEPROMManager::DataIOState::_INPUT);
+
                         // Attengo che avvenga la scrittura
                         // Implementazione controllo: Data Pooling
                         // LETTURA
@@ -614,8 +624,8 @@ public:
 
                         while (!writeCompleted)
                         {
-                            buffer = this->sample();
-                            if ((int)ceil(buffer) == data)
+                            buffer = this->sampleLowLevel();
+                            if (buffer == ((data & 0b10000000) >> 7))
                             {
                                 writeCompleted = true;
                             }
@@ -720,8 +730,8 @@ public:
         {
             // Dato da scrivere
             int data;
-            bool writeCompleted = false;
-            double buffer;
+            bool writeCompleted;
+            byte buffer;
 
             // Due diverse modalità di clear:
             // LOWEST_VALUE_FILL: tutta la memoria viene "riempita"
@@ -750,9 +760,15 @@ public:
             // trattandoli come segmenti
             for (int baseAddress = 0; baseAddress < ADDRESSES; baseAddress += SEGMENT_DEPTH)
             {
+                writeCompleted = false;
+
                 // Continuo per tutta l'estensione del segmento
                 for (int offset = 0; offset < SEGMENT_DEPTH; offset++)
                 {
+                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                    // (output da Arduino) e in entrata nel chip (input nel chip)
+                    this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
+
                     // Imposto l'indirizzo di memoria da scrivere
                     this->setAddress(baseAddress + offset);
 
@@ -776,6 +792,10 @@ public:
                     // Disabilito l'input da parte del chip
                     this->setWriteEnable(LOW);
 
+                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                    // (output da Arduino) e in entrata nel chip (input nel chip)
+                    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
+
                     // Attengo che avvenga la scrittura
                     // Implementazione controllo: Data Pooling
                     // LETTURA
@@ -789,8 +809,8 @@ public:
 
                     while (!writeCompleted)
                     {
-                        buffer = this->sample();
-                        if ((int)ceil(buffer) == data)
+                        buffer = this->sampleLowLevel();
+                        if (buffer == ((data & 0b10000000) >> 7))
                         {
                             writeCompleted = true;
                         }
@@ -888,6 +908,13 @@ private:
         }
 
         return sampleResult;
+    }
+
+    // Metodo per effettuare il campionamento dei dati
+    // in output dal chip low level
+    byte sampleLowLevel()
+    {
+        return digitalRead(this->dataIO[7]);
     }
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
