@@ -25,7 +25,6 @@ per alcun chip eeprom. Non si assumono responsabilità per eventuali
 danni al chip eeprom causati da erronea specificazione dei valori.
 */
 
-// RESET DEI VALORE BOOLEANI DA AGGIUNGERE X CORRETTO FUNZIONAMENTO!!!!!!!
 class EEPROMManager
 {
     /*USER FILL-IN*/
