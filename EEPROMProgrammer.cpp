@@ -521,6 +521,11 @@ public:
                         {
                             writeCompleted = true;
                         }
+
+                        // Attendo il valore di TIME_WAIT_READ
+                        delayMicroseconds(TIME_WAIT_READ);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
                     }
 
                     // Disabilito l'output da parte del chip
@@ -629,6 +634,11 @@ public:
                             {
                                 writeCompleted = true;
                             }
+
+                            // Attendo il valore di TIME_WAIT_READ
+                            delayMicroseconds(TIME_WAIT_READ);
+                            // Tengo conto dell'imprecisione del chip
+                            delayMicroseconds(IMPRECISION);
                         }
 
                         // Disabilito l'output da parte del chip
@@ -760,11 +770,11 @@ public:
             // trattandoli come segmenti
             for (int baseAddress = 0; baseAddress < ADDRESSES; baseAddress += SEGMENT_DEPTH)
             {
-                writeCompleted = false;
-
                 // Continuo per tutta l'estensione del segmento
                 for (int offset = 0; offset < SEGMENT_DEPTH; offset++)
                 {
+                    writeCompleted = false;
+
                     // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
                     // (output da Arduino) e in entrata nel chip (input nel chip)
                     this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
@@ -814,6 +824,11 @@ public:
                         {
                             writeCompleted = true;
                         }
+
+                        // Attendo il valore di TIME_WAIT_READ
+                        delayMicroseconds(TIME_WAIT_READ);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
                     }
 
                     // Disabilito l'output da parte del chip
