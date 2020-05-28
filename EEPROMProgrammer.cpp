@@ -784,7 +784,7 @@ public:
 
                     // Effettuo l'output del dato da scrivere sui pin I/O
                     // Il dato non verrà comunque ancora scritto
-                    this->put(0x00);
+                    this->put(data);
 
                     // SCRITTURA
                     // Abilito l'input da parte del chip
