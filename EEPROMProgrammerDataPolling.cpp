@@ -464,6 +464,32 @@ public:
     }
 
     // Metodo per effettuare la lettura di un singolo indirizzo di memoria
+    /**
+     * @brief Effettua la lettura di un singolo indirizzo di memoria
+     * 
+     * Il seguente metodo effettua la lettura di un singolo indirizzo di memoria
+     * e stampa il risultato utilizzando l'output standard.
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @param address L'indirizzo di memoria da leggere
+     * @param mode La modalità di interpretazione dei dati letti
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::HIGHEST_ADDRESS
+     * @see EEPROMManager::LOWEST_ADDRESS
+     * @see EEPROMManager::setDataIO()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::setAddress()
+     * @see EEPROMManager::setOutputEnable()
+     * @see EEPROMManager::TIME_WAIT_READ
+     * @see EEPROMManager::IMPRECISION
+     * @see EEPROMManager::sample()
+     * @see EEPROMManager::resultStringBuilder()
+     * @see EEPROMManager::ResultStringBuilderSpecification
+     * @see EEPROMManager::TIME_RECOVERY_FROM_READ
+     */
     void readAddress(const int &address, const EEPROMManager::ReadMode &mode)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -521,6 +547,34 @@ public:
     }
 
     // Metodo per effettuare la lettura di un intero segmento di memoria
+    /**
+     * @brief Effettua la lettura di un intero segmento di memoria
+     * 
+     * Il seguente metodo effettua la lettura di un intero segmento di memoria
+     * e stampa il risultato utilizzando l'output standard.
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @param baseAddress L'indirizzo base del segmento di memoria da leggere
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::HIGHEST_ADDRESS
+     * @see EEPROMManager::LOWEST_ADDRESS
+     * @see EEPROMManager::setDataIO()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::setAddress()
+     * @see EEPROMManager::setOutputEnable()
+     * @see EEPROMManager::TIME_WAIT_READ
+     * @see EEPROMManager::IMPRECISION
+     * @see EEPROMManager::sample()
+     * @see EEPROMManager::resultStringBuilder()
+     * @see EEPROMManager::ResultStringBuilderSpecification
+     * @see EEPROMManager::TIME_RECOVERY_FROM_READ
+     * @see EEPROMManager::SEGMENT_DEPTH
+     * @see EEPROMManager::format()
+     * @see EEPROMManager::FormatTarget
+     */
     void readSegment(const int &baseAddress)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -588,6 +642,19 @@ public:
     }
 
     // Metodo per leggere tutta la memoria del chip
+    /**
+     * @brief Effettua la lettura dell'intera memoria del chip
+     * 
+     * Il seguente metodo effettua la lettura dell'intera memoria del chip
+     * e stampa il risultato utilizzando l'output standard.
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::ADDRESSES
+     * @see EEPROMManager::readSegment()
+     * @see EEPROMManager::SEGMENT_DEPTH
+     */
     void readAll()
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -608,6 +675,36 @@ public:
     //////////////////////////////////////////////////////////////////////////
 
     // Metodo per effettuare la scrittura di un singolo indirizzo di memoria
+    /**
+     * @brief Effettua la scrittura di un singolo indirizzo di memoria
+     * 
+     * Il seguente metodo effettua la scrittura di un singolo indirizzo di memoria.
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @param address L'indirizzo di memoria da scrivere
+     * @param data Il valore da scrivere
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::HIGHEST_ADDRESS
+     * @see EEPROMManager::LOWEST_ADDRESS
+     * @see EEPROMManager::setDataIO()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::setAddress()
+     * @see EEPROMManager::setWriteEnable()
+     * @see EEPROMManager::TIME_WAIT_READ
+     * @see EEPROMManager::IMPRECISION
+     * @see EEPROMManager::put()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_READ
+     * @see EEPROMManager::LOWEST_VALID_DATA_VALUE
+     * @see EEPROMManager::HIGHEST_VALID_DATA_VALUE
+     * @see EEPROMManager::isReadonly()
+     * @see EEPROMManager::TIME_HOLD_WRITE_SIGNAL
+     * @see EEPROMManager::setOutputEnable()
+     * @see EEPROMManager::sampleLowLevel()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_WRITE
+     */
     void writeAddress(const int &address, const int &data)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -716,6 +813,37 @@ public:
     }
 
     // Metodo per effettuare la scrittura di un intero segmento di memoria
+    /**
+     * @brief Effettua la scrittura di un intero segmento di memoria
+     * 
+     * Il seguente metodo effettua la scrittura di un intero segmento di memoria.
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @param baseAddress L'indirizzo base del segmento di memoria da scrivere
+     * @param data Il valore da scrivere
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::HIGHEST_ADDRESS
+     * @see EEPROMManager::LOWEST_ADDRESS
+     * @see EEPROMManager::setDataIO()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::setAddress()
+     * @see EEPROMManager::setWriteEnable()
+     * @see EEPROMManager::TIME_WAIT_READ
+     * @see EEPROMManager::IMPRECISION
+     * @see EEPROMManager::put()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_READ
+     * @see EEPROMManager::LOWEST_VALID_DATA_VALUE
+     * @see EEPROMManager::HIGHEST_VALID_DATA_VALUE
+     * @see EEPROMManager::isReadonly()
+     * @see EEPROMManager::TIME_HOLD_WRITE_SIGNAL
+     * @see EEPROMManager::setOutputEnable()
+     * @see EEPROMManager::sampleLowLevel()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_WRITE
+     * @see EEPROMManager::SEGMENT_DEPTH
+     */
     void writeSegment(const int &baseAddress, const int &data)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -830,6 +958,22 @@ public:
     }
 
     // Metodo per scrivere tutta la memoria del chip
+    /**
+     * @brief Effettua la scrittura dell'intera memoria del chip
+     * 
+     * Il seguente metodo effettua la scrittura dell'intera memoria del chip.
+     * 
+     * @param data Il valore da scrivere
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::LOWEST_VALID_DATA_VALUE
+     * @see EEPROMManager::HIGHEST_VALID_DATA_VALUE
+     * @see EEPROMManager::SEGMENT_DEPTH
+     * @see EEPROMManager::ADDRESSES
+     * @see EEPROMManager::writeSegment()
+     */
     void writeAll(const int &data)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -856,6 +1000,24 @@ public:
     }
 
     // Metodo per pulire tutta la memoria del chip (formattazione)
+    /**
+     * @brief Effettua la formattazione della memoria del chip
+     * 
+     * Il seguente metodo effettua la formattazione della memoria del chip,
+     * causando la perdita di tutte le informazioni in esso contenute
+     * 
+     * @param mode La modalità di formattazione della memoria del chip
+     * 
+     * @attention Il processo di formattazione "clear" causa la perdita
+     * di tutte le informazioni contenute nella memoria del chip, eccetto per
+     * i segmenti readonly
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::writeAll
+     * @see EEPROMManager::ClearMode
+     */
     void clear(const EEPROMManager::ClearMode &mode)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -886,6 +1048,41 @@ public:
     }
 
     // Metodo per pulire tutta la memoria del chip (formattazione)
+    /**
+     * @brief Effettua la formattazione della memoria del chip
+     * 
+     * Il seguente metodo effettua la formattazione della memoria del chip,
+     * causando la perdita di tutte le informazioni in esso contenute
+     * 
+     * @param mode La modalità di formattazione della memoria del chip
+     * 
+     * @attention Il processo di formattazione "hardClear" causa la perdita
+     * di tutte le informazioni contenute nella memoria del chip, compresi i
+     * i segmenti readonly
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::HIGHEST_ADDRESS
+     * @see EEPROMManager::LOWEST_ADDRESS
+     * @see EEPROMManager::setDataIO()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::setAddress()
+     * @see EEPROMManager::setWriteEnable()
+     * @see EEPROMManager::TIME_WAIT_READ
+     * @see EEPROMManager::IMPRECISION
+     * @see EEPROMManager::put()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_READ
+     * @see EEPROMManager::LOWEST_VALID_DATA_VALUE
+     * @see EEPROMManager::HIGHEST_VALID_DATA_VALUE
+     * @see EEPROMManager::isReadonly()
+     * @see EEPROMManager::TIME_HOLD_WRITE_SIGNAL
+     * @see EEPROMManager::setOutputEnable()
+     * @see EEPROMManager::sampleLowLevel()
+     * @see EEPROMManager::TIME_RECOVERY_FROM_WRITE
+     * @see EEPROMManager::SEGMENT_DEPTH
+     */
     void hardClear(const EEPROMManager::ClearMode &mode)
     {
         // Effettuo operazioni solo se è già stata effettuata
@@ -1004,6 +1201,21 @@ public:
 
 private:
     // Seleziona l'indirizzo specificato
+    /**
+     * @brief Seleziona l'indirizzo specificato
+     * 
+     * Il seguente metodo seleziona l'indirizzo specificato attraverso
+     * un processo di output di segnali sui bus in output dal controllore e
+     * in input al chip sui pin di addressing.
+     * 
+     * @param address L'indirizzo di memoria da selezionare
+     * 
+     * @see EEPROMManager::readAddress()
+     * @see EEPROMManager::readSegment()
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     */
     void setAddress(int address)
     {
         // Per impostare l'indirizzo specificato,
@@ -1024,6 +1236,21 @@ private:
     // Imposta lo stato del pin Arduino 'outputEnable'
     // LOW: high (corrente in uscita)
     // HIGH: low (no corrente in uscita)
+    /**
+     * @brief Cambia lo stato del segnale di output enable verso il chip
+     * 
+     * Il seguente metodo cambia lo stato del segnale di output enable
+     * verso il chip
+     * 
+     * @param state Lo stato da impostare per il segnale di output enable verso il chip
+     * 
+     * @see EEPROMManager::readAddress()
+     * @see EEPROMManager::readSegment()
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     * @see EEPROMManager::init()
+     */
     void setOutputEnable(const bool &state)
     {
         digitalWrite(this->outputEnable, !state);
@@ -1032,6 +1259,19 @@ private:
     // Imposta lo stato del pin Arduino 'writeEnable'
     // LOW: high (corrente in uscita)
     // HIGH: low (no corrente in uscita)
+    /**
+     * @brief Cambia lo stato del segnale di write enable verso il chip
+     * 
+     * Il seguente metodo cambia lo stato del segnale di write enable
+     * verso il chip
+     * 
+     * @param state Lo stato da impostare per il segnale di write enable verso il chip
+     * 
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     * @see EEPROMManager::init()
+     */
     void setWriteEnable(const bool &state)
     {
         digitalWrite(this->writeEnable, !state);
@@ -1043,6 +1283,9 @@ private:
     // in output.
     // OUTPUT: Arduino invia in output segnali all'esterno;
     // dunque, il chip dovrebbe accettare segnali in input.
+    /**
+     * 
+     */
     void setDataIO(const DataIOState &state)
     {
         switch (state)
