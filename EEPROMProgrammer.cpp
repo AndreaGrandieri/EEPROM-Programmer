@@ -1,3 +1,4 @@
+// AGGIUNGERE DELAY DI SICUREZZA PER LA LATENZA DEL CHIP EEPROM
 /*
    Grandieri Andrea
 
@@ -42,6 +43,10 @@ private:
     // Il tempo di hold per far si di generare un segnale di inizio
     // scrittura valido per il chip
     static constexpr int TIME_HOLD_WRITE_SIGNAL = 1; /*microsecondi*/
+
+    // Il tempo che impiega il chip fisicamente a scrivere
+    // i dati nella memoria
+    static constexpr int TIME_WRITE = 1; /*millisecondi*/
 
     // Il tempo di recupero dopo una scrittura
     static constexpr int TIME_RECOVERY_FROM_WRITE = 0; /*millisecondi*/
@@ -167,7 +172,7 @@ public:
     // Costruttore di default
     EEPROMManager() = delete;
 
-    /*
+/*
     // Costruttore copia
     EEPROMManager(const EEPROMManager &copy)
         : outputEnable(copy.outputEnable), writeEnable(copy.writeEnable),
@@ -460,8 +465,6 @@ public:
         if (this->hasBeenInit)
         {
             String result;
-            bool writeCompleted = false;
-            byte buffer;
 
             // Controllo la validità dell'indirizzo fornito come parametro
             // e del dato da scrivere
@@ -498,40 +501,9 @@ public:
                     // Disabilito l'input da parte del chip
                     this->setWriteEnable(LOW);
 
-                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                    // (output da Arduino) e in entrata nel chip (input nel chip)
-                    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
-
                     // Attengo che avvenga la scrittura
-                    // Implementazione controllo: Data Pooling
-                    // LETTURA
-                    // Abilito l'output da parte del chip
-                    this->setOutputEnable(HIGH);
-
-                    // Attendo il valore di TIME_WAIT_READ
-                    delayMicroseconds(TIME_WAIT_READ);
-                    // Tengo conto dell'imprecisione del chip
-                    delayMicroseconds(IMPRECISION);
-
-                    while (!writeCompleted)
-                    {
-                        buffer = this->sampleLowLevel();
-                        if (buffer == ((data & 0b10000000) >> 7))
-                        {
-                            writeCompleted = true;
-                        }
-
-                        // Attendo il valore di TIME_WAIT_READ
-                        delayMicroseconds(TIME_WAIT_READ);
-                        // Tengo conto dell'imprecisione del chip
-                        delayMicroseconds(IMPRECISION);
-                    }
-
-                    // Disabilito l'output da parte del chip
-                    this->setOutputEnable(LOW);
-
-                    // Attendo il valore di TIME_RECOVERY_FROM_READ
-                    delay(TIME_RECOVERY_FROM_READ);
+                    // Attendo il valore di TIME_WRITE
+                    delay(TIME_WRITE);
                     // Tengo conto dell'imprecisione del chip
                     delayMicroseconds(IMPRECISION);
 
@@ -568,8 +540,6 @@ public:
         if (this->hasBeenInit)
         {
             String result;
-            bool writeCompleted;
-            byte buffer;
 
             // Controllo la validità dell'indirizzo di base fornito come parametro e
             // del dato da scrivere
@@ -579,15 +549,13 @@ public:
                 // se il segmento specificato non è readonly (sola lettura)
                 if (!this->isReadonly(baseAddress))
                 {
+                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                    // (output da Arduino) e in entrata nel chip (input nel chip)
+                    this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
+
                     // Continuo per tutta l'estensione del segmento
                     for (int offset = 0; offset < SEGMENT_DEPTH; offset++)
                     {
-                        writeCompleted = false;
-
-                        // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                        // (output da Arduino) e in entrata nel chip (input nel chip)
-                        this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
-
                         // Imposto l'indirizzo di memoria da scrivere
                         this->setAddress(baseAddress + offset);
 
@@ -611,40 +579,9 @@ public:
                         // Disabilito l'input da parte del chip
                         this->setWriteEnable(LOW);
 
-                        // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                        // (output da Arduino) e in entrata nel chip (input nel chip)
-                        this->setDataIO(EEPROMManager::DataIOState::_INPUT);
-
                         // Attengo che avvenga la scrittura
-                        // Implementazione controllo: Data Pooling
-                        // LETTURA
-                        // Abilito l'output da parte del chip
-                        this->setOutputEnable(HIGH);
-
-                        // Attendo il valore di TIME_WAIT_READ
-                        delayMicroseconds(TIME_WAIT_READ);
-                        // Tengo conto dell'imprecisione del chip
-                        delayMicroseconds(IMPRECISION);
-
-                        while (!writeCompleted)
-                        {
-                            buffer = this->sampleLowLevel();
-                            if (buffer == ((data & 0b10000000) >> 7))
-                            {
-                                writeCompleted = true;
-                            }
-
-                            // Attendo il valore di TIME_WAIT_READ
-                            delayMicroseconds(TIME_WAIT_READ);
-                            // Tengo conto dell'imprecisione del chip
-                            delayMicroseconds(IMPRECISION);
-                        }
-
-                        // Disabilito l'output da parte del chip
-                        this->setOutputEnable(LOW);
-
-                        // Attendo il valore di TIME_RECOVERY_FROM_READ
-                        delay(TIME_RECOVERY_FROM_READ);
+                        // Attendo il valore di TIME_WRITE
+                        delay(TIME_WRITE);
                         // Tengo conto dell'imprecisione del chip
                         delayMicroseconds(IMPRECISION);
 
@@ -739,8 +676,6 @@ public:
         {
             // Dato da scrivere
             int data;
-            bool writeCompleted;
-            byte buffer;
 
             // Due diverse modalità di clear:
             // LOWEST_VALUE_FILL: tutta la memoria viene "riempita"
@@ -772,18 +707,12 @@ public:
                 // Continuo per tutta l'estensione del segmento
                 for (int offset = 0; offset < SEGMENT_DEPTH; offset++)
                 {
-                    writeCompleted = false;
-
-                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                    // (output da Arduino) e in entrata nel chip (input nel chip)
-                    this->setDataIO(EEPROMManager::DataIOState::_OUTPUT);
-
                     // Imposto l'indirizzo di memoria da scrivere
                     this->setAddress(baseAddress + offset);
 
                     // Effettuo l'output del dato da scrivere sui pin I/O
                     // Il dato non verrà comunque ancora scritto
-                    this->put(data);
+                    this->put(0x00);
 
                     // SCRITTURA
                     // Abilito l'input da parte del chip
@@ -801,40 +730,9 @@ public:
                     // Disabilito l'input da parte del chip
                     this->setWriteEnable(LOW);
 
-                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-                    // (output da Arduino) e in entrata nel chip (input nel chip)
-                    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
-
                     // Attengo che avvenga la scrittura
-                    // Implementazione controllo: Data Pooling
-                    // LETTURA
-                    // Abilito l'output da parte del chip
-                    this->setOutputEnable(HIGH);
-
-                    // Attendo il valore di TIME_WAIT_READ
-                    delayMicroseconds(TIME_WAIT_READ);
-                    // Tengo conto dell'imprecisione del chip
-                    delayMicroseconds(IMPRECISION);
-
-                    while (!writeCompleted)
-                    {
-                        buffer = this->sampleLowLevel();
-                        if (buffer == ((data & 0b10000000) >> 7))
-                        {
-                            writeCompleted = true;
-                        }
-
-                        // Attendo il valore di TIME_WAIT_READ
-                        delayMicroseconds(TIME_WAIT_READ);
-                        // Tengo conto dell'imprecisione del chip
-                        delayMicroseconds(IMPRECISION);
-                    }
-
-                    // Disabilito l'output da parte del chip
-                    this->setOutputEnable(LOW);
-
-                    // Attendo il valore di TIME_RECOVERY_FROM_READ
-                    delay(TIME_RECOVERY_FROM_READ);
+                    // Attendo il valore di TIME_WRITE
+                    delay(TIME_WRITE);
                     // Tengo conto dell'imprecisione del chip
                     delayMicroseconds(IMPRECISION);
 
@@ -922,13 +820,6 @@ private:
         }
 
         return sampleResult;
-    }
-
-    // Metodo per effettuare il campionamento dei dati
-    // in output dal chip low level
-    byte sampleLowLevel()
-    {
-        return digitalRead(this->dataIO[7]);
     }
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
@@ -1124,9 +1015,6 @@ void setup()
 
     // Setup iniziale dell'istanza per consentirne l'uso
     myEEPROM.init();
-
-    myEEPROM.writeAddress(0, 0x46);
-    myEEPROM.readSegment(0);
 }
 
 void loop()
