@@ -1215,6 +1215,8 @@ private:
      * @see EEPROMManager::writeAddress()
      * @see EEPROMManager::writeSegment()
      * @see EEPROMManager::hardClear()
+     * @see EEPROMManager::ADDRESSING_PIN
+     * @see EEPROMManager::addresses
      */
     void setAddress(int address)
     {
@@ -1250,6 +1252,7 @@ private:
      * @see EEPROMManager::writeSegment()
      * @see EEPROMManager::hardClear()
      * @see EEPROMManager::init()
+     * @see EEPROMManager::outputEnable
      */
     void setOutputEnable(const bool &state)
     {
@@ -1271,6 +1274,7 @@ private:
      * @see EEPROMManager::writeSegment()
      * @see EEPROMManager::hardClear()
      * @see EEPROMManager::init()
+     * @see EEPROMManager::writeEnable
      */
     void setWriteEnable(const bool &state)
     {
@@ -1284,7 +1288,27 @@ private:
     // OUTPUT: Arduino invia in output segnali all'esterno;
     // dunque, il chip dovrebbe accettare segnali in input.
     /**
+     * @brief Cambia lo stato dei pin IO dal punto di vista del controllore
      * 
+     * Il seguente metodo cambia lo stato dei pin IO dal punto
+     * di vista del controllore:
+     * - EEPROMManager::DataIOState::_INPUT: indica che il controllore riceve
+     * segnali provenienti in input dall'esterno, dunque, il chip
+     * dovrebbe fornire segnali in output
+     * - EEPROMManager::DataIOState::_OUTPUT: indica che il controllore invia
+     * segnali in output verso l'esterno, dunque, il chip
+     * dovrebbe accettare segnali in input.
+     * 
+     * @param state Lo stato da impostare per i pin IO
+     * 
+     * @see EEPROMManager::readAddress()
+     * @see EEPROMManager::readSegment()
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     * @see EEPROMManager::DataIOState
+     * @see EEPROMManager::DATA_EXCHANGING_PIN
+     * @see EEPROMManager::dataIO
      */
     void setDataIO(const DataIOState &state)
     {
@@ -1308,6 +1332,21 @@ private:
 
     // Metodo per effettuare il campionamento dei dati
     // in output dal chip
+    /**
+     * @brief Effettua il campionamento dei dati in output dal chip
+     * 
+     * Il seguente metodo effettua il campionamento dei dati in output dal
+     * chip. Dunque, il chip dovrebbe fornire segnali in output e il controllore
+     * accettare segnali in input.
+     * 
+     * @pre I pin IO del controllore devono essere impostati su modalità
+     * EEPROMManager::DataIOState::_INPUT
+     * 
+     * @see EEPROMManager::readAddress()
+     * @see EEPROMManager::readSegment()
+     * @see EEPROMManager::DATA_EXCHANGING_PIN
+     * @see EEPROMManager::dataIO
+     */
     double sample()
     {
         double sampleResult = 0;
@@ -1324,6 +1363,21 @@ private:
 
     // Metodo per effettuare il campionamento dei dati
     // in output dal chip low level
+    /**
+     * @brief Effettua il campionamento low level dei dati in output dal chip
+     * 
+     * Il seguente metodo effettua il campionamento solo del dato in uscita
+     * dal pin IO7 del chip EEPROM. Questo è necessario per implementare la tecnica
+     * del Data Polling (descritta nel dettaglio sopra).
+     * 
+     * @pre I pin IO del controllore devono essere impostati su modalità
+     * EEPROMManager::DataIOState::_INPUT
+     * 
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     * @see EEPROMManager::dataIO
+     */
     byte sampleLowLevel()
     {
         return digitalRead(this->dataIO[7]);
@@ -1331,6 +1385,30 @@ private:
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
     // più semplice da interpretare e "più elegante"
+    /**
+     * @brief Formatta i dati da visualizzare per ottenere un output
+     * a schermo più elegante e semplice da interpretare e permette di effettuare
+     * la conversione dei dati da visualizzare in basi differenti
+     * 
+     * Il seguente metodo formatta i dati da visualizzare per ottenere un output
+     * a schermo più elegante e semplice da interpretare. Inoltre
+     * permette di effettuare la conversione dei dati da visualizzare nelle seguenti basi:
+     * - DEC
+     * - HEX
+     * - OCT
+     * - BIN
+     * 
+     * @param address L'indirizzo di memoria da includere come informazione nell'output formattato
+     * @param sampleResult Il valore letto dal chip da includere come informazione nell'output formattato
+     * @param mode La modalità di interpretazione dei dati letti: la base
+     * @param specification Indica la presenza o meno di informazioni aggiuntive poste ad arricchire il
+     * significato dell'output
+     * 
+     * @see EEPROMManager::ResultStringBuilderSpecification
+     * @see EEPROMManager::ReadMode
+     * @see EEPROMManager::readAddress()
+     * @see EEPROMManager::readSegment()
+     */
     String resultStringBuilder(const int &address, const double &sampleResult, const EEPROMManager::ReadMode &mode,
                                const EEPROMManager::ResultStringBuilderSpecification &specification)
     {
@@ -1410,6 +1488,23 @@ private:
 
     // Metodo utilizzato durante la lettura dati per la costruzione di un output
     // più semplice da interpretare e "più elegante"
+    /**
+     * @brief Formatta i dati da visualizzare per ottenere un output
+     * a schermo più elegante e semplice da interpretare
+     * 
+     * Il seguente metodo formatta i dati da visualizzare per ottenere un output
+     * a schermo più elegante e semplice da interpretare.
+     * Viene utilizzata la tecnica del padding, la quale consiste nell'aggiunta di "un
+     * numero variabile di zeri" davanti ad altri valori numerici per ottenere
+     * un incolonnamento "perfetto".
+     * 
+     * @param value Il valore numerico al quale applicare un eventuale padding
+     * @param target Il target del padding
+     * 
+     * @see EEPROMManager::FormatTarget
+     * @see EEPROMManager::PADDING_CHECK_ONE
+     * @see EEPROMManager::PADDING_CHECK_TWO
+     */
     String format(const int &value, const EEPROMManager::FormatTarget &target)
     {
         String padding;
@@ -1448,6 +1543,23 @@ private:
     }
 
     // Imposta un dato/valore specificato
+    /**
+     * @brief Imposta il valore specificato sui pin IO
+     * 
+     * Il seguente metodo imposta il valore specificato
+     * sui pin IO, scomponendolo nei singoli bit da cui è 
+     * composto e assegnando ciascuno di essi ad un rispettivo
+     * pin IO (rispettando la sequenza MSB - LSB). Dunque, ogni singolo
+     * bit avrà il proprio bus e il proprio pin IO.
+     * 
+     * @param state Il valore da impostare
+     * 
+     * @see EEPROMManager::DATA_EXCHANGING_PIN
+     * @see EEPROMManager::dataIO
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     * @see EEPROMManager::hardClear()
+     */
     void put(int data)
     {
         // Per impostare il dato/valore specificato,
@@ -1467,7 +1579,23 @@ private:
 
     // Metodo per controllare se l'indirizzo specificato
     // è readonly (sola lettura)
-    bool isReadonly(const int &address)
+    /**
+     * @brief Controlla se l'indirizzo base specificato
+     * si riferisce ad un segmento readonly
+     * 
+     * Il seguente metodo controlla se l'indirizzo base specificato
+     * si riferisce ad un segmento readonly.
+     * 
+     * @param baseAddress L'indirizzo base da controllare
+     * 
+     * @see EEPROMManager::READONLY_SEGMENTS_ALLOWED
+     * @see EEPROMManager::READONLY_SEGMENTS
+     * @see EEPROMManager::readonlySegments
+     * @see EEPROMManager::SEGMENT_DEPTH
+     * @see EEPROMManager::writeAddress()
+     * @see EEPROMManager::writeSegment()
+     */
+    bool isReadonly(const int &baseAddress)
     {
         // Effettuo operazioni solo se i segmenti readonly (sola lettura)
         // sono attivi
@@ -1488,7 +1616,7 @@ private:
                         // Ricerco l'indirizzo specificato
                         // Se lo trovo, significa che è readonly (sola lettura) in quanto
                         // appartiene ad un segmento readonly (sola lettura)
-                        if (this->readonlySegments[i] + offset == address)
+                        if (this->readonlySegments[i] + offset == baseAddress)
                             // Trovato
                             return true;
                     }
