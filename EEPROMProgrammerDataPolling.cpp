@@ -528,7 +528,7 @@ public:
                 // Costruisco il risultato
                 // Il metodo 'resultStringBuilder' mi permette di formattare stilisticamente l'output in un formato
                 // semplice da interpretare ed elegante
-                result = this->resultStringBuilder(address, this->sample(), mode, EEPROMManager::ResultStringBuilderSpecification::INCLUDE_HEADER_INFO);
+                result = this->resultStringBuilder(address, sampleResult, mode, EEPROMManager::ResultStringBuilderSpecification::INCLUDE_HEADER_INFO);
 
                 // Attendo il valore di TIME_RECOVERY_FROM_READ
                 delay(TIME_RECOVERY_FROM_READ);
