@@ -13,6 +13,27 @@
  * realizza l'ambiente di gestione di un chip EEPROM.
  */
 
+/*
+Data Polling
+Il data polling è una tecnologia fornita ormai da molti
+chip eeprom che permette, tramite segnali in output, di comunicare
+il momento esatto di quando un ciclo di scrittura giunge
+al suo termine.
+Questo è molto utile in quanto non è più necessario utilizzare dei delay
+di attesa che possono rivelarsi non accurati, ma basta semplicemente
+implementare un utilizzatore di questa tecnologia.
+Il funzionamento in breve è il seguente:
+- se viene effettuata una lettura dell'indirizzo di memoria che
+sta venendo scritto e il ciclo di scrittura non è ancora terminato,
+allora i pin IO0, IO1, IO2, IO3, IO4, IO5, IO6 forniranno risultati
+indeterminati, mentre il pin IO7 fornirà in output il complemento del
+MSB del dato che sta venendo scritto.
+- una volta completato il ciclo di scrittura, allora in output sui pin IO
+verrà fornito il dato appena scritto, e il pin IO7 fornirà il vero
+(non complementato) MSB del dato scritto. Questo permette di segnalare quando
+un ciclo di scrittura non è ancora terminato e quando è terminato.
+*/
+
 // Preprocessor directives (deprecated)
 /*#define ENTIRETY_ADDRESSES int address = 0; address < ADDRESSES; address++*/
 /*#define ENTIRETY_ADDRESSING_PIN int i = 0; i < ADDRESSING_PIN; i++*/
@@ -150,7 +171,7 @@ private:
      * 
      * @see EEPROMManager::format()
      */
-    static constexpr int PADDING_CHECK_ONE = 16;  /*16^1*/
+    static constexpr int PADDING_CHECK_ONE = 16; /*16^1*/
 
     /**
      * Rappresenta una direttiva del preprocessore moderna utilizzata per
@@ -654,6 +675,7 @@ public:
      * @see EEPROMManager::ADDRESSES
      * @see EEPROMManager::readSegment()
      * @see EEPROMManager::SEGMENT_DEPTH
+     * @see EEPROMManager::readSegment()
      */
     void readAll()
     {
@@ -747,36 +769,40 @@ public:
                     delayMicroseconds(IMPRECISION);
                     */
 
-    // Disabilito l'input da parte del chip
-    this->setWriteEnable(LOW);
+                    // Disabilito l'input da parte del chip
+                    this->setWriteEnable(LOW);
 
-    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
-    // (output da Arduino) e in entrata nel chip (input nel chip)
-    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
+                    // Imposto i pin I/O su output. Questo significa che i dati sono in uscita da Arduino
+                    // (output da Arduino) e in entrata nel chip (input nel chip)
+                    this->setDataIO(EEPROMManager::DataIOState::_INPUT);
 
-    // Attengo che avvenga la scrittura
-    // Implementazione controllo: Data Pooling
-    // LETTURA
-    // Abilito l'output da parte del chip
-    this->setOutputEnable(HIGH);
+                    // Attengo che avvenga la scrittura
+                    // Implementazione controllo: Data Pooling
+                    // LETTURA
+                    // Abilito l'output da parte del chip
+                    this->setOutputEnable(HIGH);
 
-    // Attendo il valore di TIME_WAIT_READ
-    delayMicroseconds(TIME_WAIT_READ);
-    // Tengo conto dell'imprecisione del chip
-    delayMicroseconds(IMPRECISION);
+                    // Attendo il valore di TIME_WAIT_READ
+                    delayMicroseconds(TIME_WAIT_READ);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
 
-    while (!writeCompleted)
-    {
-        buffer = this->sampleLowLevel();
-        if (buffer == ((data & 0b10000000) >> 7))
-        {
-            writeCompleted = true;
-        }
+                    while (!writeCompleted)
+                    {
+                        buffer = this->sampleLowLevel();
+                        if (buffer == ((data & 0b10000000) >> 7))
+                        {
+                            writeCompleted = true;
+                        }
 
-        // Attendo il valore di TIME_WAIT_READ
-        delayMicroseconds(TIME_WAIT_READ);
-        // Tengo conto dell'imprecisione del chip
-        delayMicroseconds(IMPRECISION);
+                        // Blocco di delay necessario in quanto, durante la lettura
+                        // in loop, le informazioni sono soggette a modifiche che necessitano
+                        // tempo prima di essere campionabili (altrimenti si correrebbe il rischio
+                        // di leggere informazioni vecchie)
+                        // Attendo il valore di TIME_WAIT_READ
+                        delayMicroseconds(TIME_WAIT_READ);
+                        // Tengo conto dell'imprecisione del chip
+                        delayMicroseconds(IMPRECISION);
                     }
 
                     // Disabilito l'output da parte del chip
@@ -917,6 +943,10 @@ public:
                                 writeCompleted = true;
                             }
 
+                            // Blocco di delay necessario in quanto, durante la lettura
+                            // in loop, le informazioni sono soggette a modifiche che necessitano
+                            // tempo prima di essere campionabili (altrimenti si correrebbe il rischio
+                            // di leggere informazioni vecchie)
                             // Attendo il valore di TIME_WAIT_READ
                             delayMicroseconds(TIME_WAIT_READ);
                             // Tengo conto dell'imprecisione del chip
@@ -1015,7 +1045,7 @@ public:
      * @pre L'inizializzazione deve essere già stata eseguita
      * 
      * @see EEPROMManager::hasBeenInit
-     * @see EEPROMManager::writeAll
+     * @see EEPROMManager::writeAll()
      * @see EEPROMManager::ClearMode
      */
     void clear(const EEPROMManager::ClearMode &mode)
@@ -1176,6 +1206,10 @@ public:
                             writeCompleted = true;
                         }
 
+                        // Blocco di delay necessario in quanto, durante la lettura
+                        // in loop, le informazioni sono soggette a modifiche che necessitano
+                        // tempo prima di essere campionabili (altrimenti si correrebbe il rischio
+                        // di leggere informazioni vecchie)
                         // Attendo il valore di TIME_WAIT_READ
                         delayMicroseconds(TIME_WAIT_READ);
                         // Tengo conto dell'imprecisione del chip
@@ -1650,9 +1684,6 @@ void setup()
 
     // Setup iniziale dell'istanza per consentirne l'uso
     myEEPROM.init();
-
-    myEEPROM.writeAddress(0, 0x46);
-    myEEPROM.readSegment(0);
 }
 
 void loop()
