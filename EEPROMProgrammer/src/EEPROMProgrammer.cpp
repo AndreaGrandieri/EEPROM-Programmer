@@ -159,7 +159,7 @@ private:
      * 
      * @see EEPROMManager::format()
      */
-    static constexpr int PADDING_CHECK_ONE = 16;  /*16^1*/
+    static constexpr int PADDING_CHECK_ONE = 16; /*16^1*/
 
     /**
      * Rappresenta una direttiva del preprocessore moderna utilizzata per
@@ -1075,19 +1075,19 @@ public:
                     delayMicroseconds(IMPRECISION);
                     */
 
-    // Disabilito l'input da parte del chip
-    this->setWriteEnable(LOW);
+                    // Disabilito l'input da parte del chip
+                    this->setWriteEnable(LOW);
 
-    // Attengo che avvenga la scrittura
-    // Attendo il valore di TIME_WRITE
-    delay(TIME_WRITE);
-    // Tengo conto dell'imprecisione del chip
-    delayMicroseconds(IMPRECISION);
+                    // Attengo che avvenga la scrittura
+                    // Attendo il valore di TIME_WRITE
+                    delay(TIME_WRITE);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
 
-    // Attendo il valore di TIME_RECOVERY_FROM_WRITE
-    delay(TIME_RECOVERY_FROM_WRITE);
-    // Tengo conto dell'imprecisione del chip
-    delayMicroseconds(IMPRECISION);
+                    // Attendo il valore di TIME_RECOVERY_FROM_WRITE
+                    delay(TIME_RECOVERY_FROM_WRITE);
+                    // Tengo conto dell'imprecisione del chip
+                    delayMicroseconds(IMPRECISION);
                 }
             }
         }
