@@ -79,6 +79,11 @@ private:
 
     // Il tempo che impiega il chip fisicamente a scrivere
     // i dati nella memoria
+    /**
+     * Rappresenta una direttiva del preprocessore moderna indicante quanto
+     * tempo impiega un ciclo di scrittura per essere totalmente
+     * completato
+     */
     static constexpr int TIME_WRITE = 1; /*millisecondi*/
 
     // Il tempo di recupero dopo una scrittura
