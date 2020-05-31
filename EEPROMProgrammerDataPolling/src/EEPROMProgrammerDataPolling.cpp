@@ -13,6 +13,8 @@
  * realizza l'ambiente di gestione di un chip EEPROM.
  */
 
+#include "StringSplit.h";
+
 /*
 Data Polling
 Il data polling è una tecnologia fornita ormai da molti
@@ -1026,6 +1028,17 @@ public:
                 // Dato non valido
                 Serial.println("Invalid data. No data written.");
             }
+        }
+    }
+
+    // No check (per adesso)
+    void writeAssistive(const char* data, const char& delimitier, int printingHeadStartPosition)
+    {
+        auto splitted = split(data, delimitier);
+
+        for (int i = 0; i < splitted.length; i++, printingHeadStartPosition++)
+        {
+            this->writeAddress(printingHeadStartPosition, (int)strtol(splitted.array[i].c_str(), NULL, 16));
         }
     }
 
