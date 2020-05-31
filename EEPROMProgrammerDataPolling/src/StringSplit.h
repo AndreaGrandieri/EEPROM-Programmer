@@ -66,3 +66,8 @@ Pair split(const String &string, const char &delimiter)
 
     return Pair(splitted, words);
 }
+
+void split(const char* data, const char &delimiter)
+{
+    
+}

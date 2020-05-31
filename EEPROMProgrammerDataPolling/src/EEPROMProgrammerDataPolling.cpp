@@ -13,7 +13,7 @@
  * realizza l'ambiente di gestione di un chip EEPROM.
  */
 
-#include "StringSplit.h";
+// #include "StringSplit.h";
 
 /*
 Data Polling
@@ -1032,14 +1032,28 @@ public:
     }
 
     // No check (per adesso)
-    void writeAssistive(const char* data, const char& delimitier, int printingHeadStartPosition)
-    {
+    void writeAssistive(const char* data, const int& bytes, const char& delimitier, int printingHeadStartPosition)
+    {      
+        for (int i = 0; i < (bytes - 1); i += 3, printingHeadStartPosition++)
+        {         
+            if (printingHeadStartPosition > 2047)
+            {
+              Serial.println("Cannot write anymore. No memory left.");
+              break;
+            }
+            
+            this->writeAddress(printingHeadStartPosition, (int)strtol(String((String)data[i] + (String)data[i + 1]).c_str(), NULL, 16));
+        }
+
+
+        /*
         auto splitted = split(data, delimitier);
 
         for (int i = 0; i < splitted.length; i++, printingHeadStartPosition++)
         {
             this->writeAddress(printingHeadStartPosition, (int)strtol(splitted.array[i].c_str(), NULL, 16));
         }
+        */
     }
 
     // Metodo per pulire tutta la memoria del chip (formattazione)
