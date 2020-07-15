@@ -935,6 +935,67 @@ public:
         }
     }
 
+    /**
+     * @brief Effettua la scrittura della sequenza di byte specificata nella memoria del chip
+     * 
+     * Il seguente metodo effettua la scrittura nella memoria del chip della sequenza di byte specificata,
+     * partendo a scrivere dalla posizione specificata per la testina di stampa (situata sul primo indirizzo
+     * di memoria che verrà scritto).
+     * 
+     * @param data La sequenza di byte da scrivere nella memoria del chip
+     * @param bytes La quantità di byte presenti nella sequenza fornita
+     * @param printingHeadStartPosition La posizione di partenza della testina di stampa
+     * 
+     * @pre L'inizializzazione deve essere già stata eseguita
+     * 
+     * @see EEPROMManager::hasBeenInit
+     * @see EEPROMManager::LOWEST_VALID_DATA_VALUE
+     * @see EEPROMManager::HIGHEST_VALID_DATA_VALUE
+     * @see EEPROMManager::writeAddress()
+     */
+    void writeAssistive(const char *data, const int &bytes, int printingHeadStartPosition)
+    {
+        // Di seguito vengono riportate le allocazioni nello stack frame di questa funzione,
+        // per effettuare il controllo sull'incidenza sulla memoria (ridotta) del controllore
+        // Stack frame (sicuro):
+        // - data
+        // - printingHeadStartPosition
+        // - i
+        // -  dataConverted {"(int)strtol(String((String)data[i] + (String)data[i + 1]).c_str(), NULL, 16)"} (allocato solo una volta,
+        // riassegnato molteplici volte)
+        // - "String((String)data[i] + (String)data[i + 1]).c_str()" (allocato solo una volta, ricalcolato molteplici volte)
+        // - NULL (i.e. 0) (allocato solo una volta, ricalcolato molteplici volte)
+        // - 16 (allocato solo una volta, ricalcolato molteplici volte)
+
+        // Effettuo operazioni solo se è già stata effettuata
+        // l'inizializzazione
+        if (this->hasBeenInit)
+        {
+            for (int i = 0; i < (bytes - 1); i += 3, printingHeadStartPosition++)
+            {
+                if (printingHeadStartPosition > 2047)
+                {
+                    Serial.println("Cannot write anymore. No memory left.");
+                    break;
+                }
+
+                int dataConverted = (int)strtol(String((String)data[i] + (String)data[i + 1]).c_str(), NULL, 16);
+
+                // Controllo la validità del dato da scrivere
+                if (dataConverted >= LOWEST_VALID_DATA_VALUE && dataConverted <= HIGHEST_VALID_DATA_VALUE)
+                {
+                    this->writeAddress(printingHeadStartPosition, dataConverted);
+                }
+                else
+                {
+                    // Dato non valido
+                    printingHeadStartPosition--;
+                    Serial.println("Invalid data. No data written.");
+                }
+            }
+        }
+    }
+
     // Metodo per pulire tutta la memoria del chip (formattazione)
     /**
      * @brief Effettua la formattazione della memoria del chip

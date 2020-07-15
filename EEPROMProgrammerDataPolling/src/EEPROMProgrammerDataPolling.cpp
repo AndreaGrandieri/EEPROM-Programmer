@@ -32,6 +32,11 @@ MSB del dato che sta venendo scritto.
 verrà fornito il dato appena scritto, e il pin IO7 fornirà il vero
 (non complementato) MSB del dato scritto. Questo permette di segnalare quando
 un ciclo di scrittura non è ancora terminato e quando è terminato.
+
+Per implementare l'utilizzatore di questa tecnologia, basterà
+rimanere in ascolto (continuare a leggere) del pin IO7 e non rilasciare
+il controllo del chip fino a quando quest'ultimo non restituisce il vero
+(non complementato) MSB del dato che sta venendo scritto.
 */
 
 // Preprocessor directives (deprecated)
