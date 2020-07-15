@@ -58,6 +58,8 @@ void \mbox{\hyperlink{class_e_e_p_r_o_m_manager_a75bc6da9c92c79d169c172d854ae444
 \begin{DoxyCompactList}\small\item\em Effettua la scrittura di un intero segmento di memoria. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6}{write\+All}} (const int \&data)
 \begin{DoxyCompactList}\small\item\em Effettua la scrittura dell\textquotesingle{}intera memoria del chip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd}{write\+Assistive}} (const char $\ast$data, const int \&bytes, int printing\+Head\+Start\+Position)
+\begin{DoxyCompactList}\small\item\em Effettua la scrittura della sequenza di byte specificata nella memoria del chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m_manager_a23ddca0bf363d06f2546bc090ece2067}{clear}} (const \mbox{\hyperlink{class_e_e_p_r_o_m_manager_aef6d23a3d51d600b159b942d8703c15a}{E\+E\+P\+R\+O\+M\+Manager\+::\+Clear\+Mode}} \&mode)
 \begin{DoxyCompactList}\small\item\em Effettua la formattazione della memoria del chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_e_e_p_r_o_m_manager_adfdb0fece69f1722b6fe85e6b0562bde}{hard\+Clear}} (const \mbox{\hyperlink{class_e_e_p_r_o_m_manager_aef6d23a3d51d600b159b942d8703c15a}{E\+E\+P\+R\+O\+M\+Manager\+::\+Clear\+Mode}} \&mode)
@@ -461,7 +463,7 @@ L\textquotesingle{}inizializzazione deve essere già stata eseguita
 \end{DoxySeeAlso}
 
 
-Definition at line 957 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1018 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -500,7 +502,7 @@ numero variabile di zeri\char`\"{} davanti ad altri valori numerici per ottenere
 \end{DoxySeeAlso}
 
 
-Definition at line 1380 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1441 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -570,7 +572,7 @@ L\textquotesingle{}inizializzazione deve essere già stata eseguita
 \end{DoxySeeAlso}
 
 
-Definition at line 1019 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1080 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -659,7 +661,7 @@ Il seguente metodo controlla se l\textquotesingle{}indirizzo base specificato si
 \end{DoxySeeAlso}
 
 
-Definition at line 1470 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1531 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -699,7 +701,7 @@ Il seguente metodo imposta il valore specificato sui pin IO, scomponendolo nei s
 \end{DoxySeeAlso}
 
 
-Definition at line 1435 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1496 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -925,7 +927,7 @@ Il seguente metodo formatta i dati da visualizzare per ottenere un output a sche
 \end{DoxySeeAlso}
 
 
-Definition at line 1284 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1345 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -961,7 +963,7 @@ I pin IO del controllore devono essere impostati su modalità \mbox{\hyperlink{c
 \end{DoxySeeAlso}
 
 
-Definition at line 1244 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1305 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -1005,7 +1007,7 @@ Il seguente metodo seleziona l\textquotesingle{}indirizzo specificato attraverso
 \end{DoxySeeAlso}
 
 
-Definition at line 1115 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1176 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -1055,7 +1057,7 @@ Il seguente metodo cambia lo stato dei pin IO dal punto di vista del controllore
 \end{DoxySeeAlso}
 
 
-Definition at line 1207 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1268 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -1099,7 +1101,7 @@ Il seguente metodo cambia lo stato del segnale di output enable verso il chip
 \end{DoxySeeAlso}
 
 
-Definition at line 1151 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1212 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -1139,7 +1141,7 @@ Il seguente metodo cambia lo stato del segnale di write enable verso il chip
 \end{DoxySeeAlso}
 
 
-Definition at line 1173 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+Definition at line 1234 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -1216,6 +1218,14 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6}\label{class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6}} 
 \index{EEPROMManager@{EEPROMManager}!writeAll@{writeAll}}
 \index{writeAll@{writeAll}!EEPROMManager@{EEPROMManager}}
@@ -1267,6 +1277,51 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd}\label{class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd}} 
+\index{EEPROMManager@{EEPROMManager}!writeAssistive@{writeAssistive}}
+\index{writeAssistive@{writeAssistive}!EEPROMManager@{EEPROMManager}}
+\doxysubsubsection{\texorpdfstring{writeAssistive()}{writeAssistive()}}
+{\footnotesize\ttfamily void E\+E\+P\+R\+O\+M\+Manager\+::write\+Assistive (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{const int \&}]{bytes,  }\item[{int}]{printing\+Head\+Start\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Effettua la scrittura della sequenza di byte specificata nella memoria del chip. 
+
+Il seguente metodo effettua la scrittura nella memoria del chip della sequenza di byte specificata, partendo a scrivere dalla posizione specificata per la testina di stampa (situata sul primo indirizzo di memoria che verrà scritto).
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & La sequenza di byte da scrivere nella memoria del chip \\
+\hline
+{\em bytes} & La quantità di byte presenti nella sequenza fornita \\
+\hline
+{\em printing\+Head\+Start\+Position} & La posizione di partenza della testina di stampa\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+L\textquotesingle{}inizializzazione deve essere già stata eseguita
+\end{DoxyPrecond}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_e_e_p_r_o_m_manager_ac9684363ad84b018ab85121e2f94b6d3}{E\+E\+P\+R\+O\+M\+Manager\+::has\+Been\+Init}} 
+
+\mbox{\hyperlink{class_e_e_p_r_o_m_manager_a0e43ea279fa5b58d79deba7d4fe62e16}{E\+E\+P\+R\+O\+M\+Manager\+::\+L\+O\+W\+E\+S\+T\+\_\+\+V\+A\+L\+I\+D\+\_\+\+D\+A\+T\+A\+\_\+\+V\+A\+L\+UE}} 
+
+\mbox{\hyperlink{class_e_e_p_r_o_m_manager_a83421cdd18eb39598af0ddaa57775a01}{E\+E\+P\+R\+O\+M\+Manager\+::\+H\+I\+G\+H\+E\+S\+T\+\_\+\+V\+A\+L\+I\+D\+\_\+\+D\+A\+T\+A\+\_\+\+V\+A\+L\+UE}} 
+
+\mbox{\hyperlink{class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90}{E\+E\+P\+R\+O\+M\+Manager\+::write\+Address()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 956 of file E\+E\+P\+R\+O\+M\+Programmer.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_e_e_p_r_o_m_manager_a75bc6da9c92c79d169c172d854ae4448}\label{class_e_e_p_r_o_m_manager_a75bc6da9c92c79d169c172d854ae4448}} 

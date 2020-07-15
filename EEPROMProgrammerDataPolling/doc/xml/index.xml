@@ -53,6 +53,7 @@
     <member refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kind="function"><name>writeAddress</name></member>
     <member refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kind="function"><name>writeSegment</name></member>
     <member refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" kind="function"><name>writeAll</name></member>
+    <member refid="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" kind="function"><name>writeAssistive</name></member>
     <member refid="class_e_e_p_r_o_m_manager_1a23ddca0bf363d06f2546bc090ece2067" kind="function"><name>clear</name></member>
     <member refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kind="function"><name>hardClear</name></member>
     <member refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kind="function"><name>setAddress</name></member>

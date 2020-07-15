@@ -81,7 +81,7 @@ Collaboration diagram for EEPROMManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager__coll__graph.png" border="0" usemap="#_e_e_p_r_o_m_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="_e_e_p_r_o_m_manager_coll__map" id="_e_e_p_r_o_m_manager_coll__map">
-<area shape="rect" title="Classe per la gestione di un chip EEPROM." alt="" coords="5,5,257,757"/>
+<area shape="rect" title="Classe per la gestione di un chip EEPROM." alt="" coords="5,5,257,772"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -140,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d1413187f2761faef59a9fe09ebf4c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6">writeAll</a> (const int &amp;data)</td></tr>
 <tr class="memdesc:a0d1413187f2761faef59a9fe09ebf4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effettua la scrittura dell'intera memoria del chip.  <a href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6">More...</a><br /></td></tr>
 <tr class="separator:a0d1413187f2761faef59a9fe09ebf4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5161ceb594613c87cd2359bd94875dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd">writeAssistive</a> (const char *data, const int &amp;bytes, int printingHeadStartPosition)</td></tr>
+<tr class="memdesc:ab5161ceb594613c87cd2359bd94875dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effettua la scrittura della sequenza di byte specificata nella memoria del chip.  <a href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd">More...</a><br /></td></tr>
+<tr class="separator:ab5161ceb594613c87cd2359bd94875dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23ddca0bf363d06f2546bc090ece2067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067">clear</a> (const <a class="el" href="class_e_e_p_r_o_m_manager.html#aef6d23a3d51d600b159b942d8703c15a">EEPROMManager::ClearMode</a> &amp;mode)</td></tr>
 <tr class="memdesc:a23ddca0bf363d06f2546bc090ece2067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effettua la formattazione della memoria del chip.  <a href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067">More...</a><br /></td></tr>
 <tr class="separator:a23ddca0bf363d06f2546bc090ece2067"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -713,7 +716,7 @@ EEPROMManager::LIST_READONLY_SEGMENTS </dd></dl>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#aef6d23a3d51d600b159b942d8703c15a" title="Enumerazione rappresentante le diverse modalità di formattazione della memoria del chip.">EEPROMManager::ClearMode</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l00957">957</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01018">1018</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -782,7 +785,7 @@ numero variabile di zeri" davanti ad altri valori numerici per ottenere un incol
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a506cba0eee0824b11dba967fc7d56d89">EEPROMManager::PADDING_CHECK_TWO</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01380">1380</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01441">1441</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -864,7 +867,7 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a97b075a3576619653d12c97cea818799">EEPROMManager::TIME_WRITE</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01019">1019</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01080">1080</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -986,16 +989,17 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria.">EEPROMManager::writeSegment()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01470">1470</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01531">1531</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager_a8d2076266a99cc5f6cd94f6fcca660d7_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_a8d2076266a99cc5f6cd94f6fcca660d7_icgraph" alt=""/></div>
 <map name="class_e_e_p_r_o_m_manager_a8d2076266a99cc5f6cd94f6fcca660d7_icgraph" id="class_e_e_p_r_o_m_manager_a8d2076266a99cc5f6cd94f6fcca660d7_icgraph">
-<area shape="rect" title="Controlla se l&#39;indirizzo base specificato si riferisce ad un segmento readonly." alt="" coords="709,31,911,57"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="447,5,659,32"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="445,56,661,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,56,397,83"/>
+<area shape="rect" title="Controlla se l&#39;indirizzo base specificato si riferisce ad un segmento readonly." alt="" coords="747,31,948,57"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="485,5,697,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="483,56,699,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="219,5,435,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="237,56,416,83"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,56,171,83"/>
 </map>
 </div>
@@ -1044,17 +1048,18 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip.">EEPROMManager::hardClear()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01435">1435</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01496">1496</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager_a2c8f18767067d27e3e90256b8070a4ac_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_a2c8f18767067d27e3e90256b8070a4ac_icgraph" alt=""/></div>
 <map name="class_e_e_p_r_o_m_manager_a2c8f18767067d27e3e90256b8070a4ac_icgraph" id="class_e_e_p_r_o_m_manager_a2c8f18767067d27e3e90256b8070a4ac_icgraph">
-<area shape="rect" title="Imposta il valore specificato sui pin IO." alt="" coords="709,56,864,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="457,5,649,32"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="447,56,659,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="445,107,661,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,107,397,133"/>
+<area shape="rect" title="Imposta il valore specificato sui pin IO." alt="" coords="747,56,901,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="495,5,687,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="485,56,697,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="483,107,699,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="219,56,435,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="237,107,416,133"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,107,171,133"/>
 </map>
 </div>
@@ -1369,7 +1374,7 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#aa97bd0d8c960f957f6c6a47d6b502dd8" title="Effettua la lettura di un intero segmento di memoria.">EEPROMManager::readSegment()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01284">1284</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01345">1345</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1418,7 +1423,7 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a3765e7d80716eec86e8dc21fffb93b61">EEPROMManager::dataIO</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01244">1244</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01305">1305</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1479,20 +1484,21 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a8c43db4ba4e547fefa6382b95761342a">EEPROMManager::addresses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01115">1115</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01176">1176</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager_a9ee8c63564876db6614f32b57598ae64_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_a9ee8c63564876db6614f32b57598ae64_icgraph" alt=""/></div>
 <map name="class_e_e_p_r_o_m_manager_a9ee8c63564876db6614f32b57598ae64_icgraph" id="class_e_e_p_r_o_m_manager_a9ee8c63564876db6614f32b57598ae64_icgraph">
-<area shape="rect" title="Seleziona l&#39;indirizzo specificato." alt="" coords="709,107,912,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="457,5,649,32"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a595de5a32439cfa9af2868bef5b77770" title="Effettua la lettura di un singolo indirizzo di memoria." alt="" coords="448,56,659,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa97bd0d8c960f957f6c6a47d6b502dd8" title="Effettua la lettura di un intero segmento di memoria." alt="" coords="446,107,661,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="447,157,659,184"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="445,208,661,235"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a148019e3414b8e81a6dd33386c049f29" title="Effettua la lettura dell&#39;intera memoria del chip." alt="" coords="219,107,397,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,208,397,235"/>
+<area shape="rect" title="Seleziona l&#39;indirizzo specificato." alt="" coords="747,107,949,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="495,5,687,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a595de5a32439cfa9af2868bef5b77770" title="Effettua la lettura di un singolo indirizzo di memoria." alt="" coords="485,56,696,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa97bd0d8c960f957f6c6a47d6b502dd8" title="Effettua la lettura di un intero segmento di memoria." alt="" coords="483,107,698,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="485,157,697,184"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="483,208,699,235"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a148019e3414b8e81a6dd33386c049f29" title="Effettua la lettura dell&#39;intera memoria del chip." alt="" coords="238,107,415,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="219,157,435,184"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="237,208,416,235"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,208,171,235"/>
 </map>
 </div>
@@ -1550,20 +1556,21 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#a3765e7d80716eec86e8dc21fffb93b61">EEPROMManager::dataIO</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01207">1207</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01268">1268</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager_a162d0b0b8d6787c1f3e599237f328d11_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_a162d0b0b8d6787c1f3e599237f328d11_icgraph" alt=""/></div>
 <map name="class_e_e_p_r_o_m_manager_a162d0b0b8d6787c1f3e599237f328d11_icgraph" id="class_e_e_p_r_o_m_manager_a162d0b0b8d6787c1f3e599237f328d11_icgraph">
-<area shape="rect" title="Cambia lo stato dei pin IO dal punto di vista del controllore." alt="" coords="709,107,904,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="457,5,649,32"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a595de5a32439cfa9af2868bef5b77770" title="Effettua la lettura di un singolo indirizzo di memoria." alt="" coords="448,56,659,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa97bd0d8c960f957f6c6a47d6b502dd8" title="Effettua la lettura di un intero segmento di memoria." alt="" coords="446,107,661,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="447,157,659,184"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="445,208,661,235"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a148019e3414b8e81a6dd33386c049f29" title="Effettua la lettura dell&#39;intera memoria del chip." alt="" coords="219,107,397,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,208,397,235"/>
+<area shape="rect" title="Cambia lo stato dei pin IO dal punto di vista del controllore." alt="" coords="747,107,941,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="495,5,687,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a595de5a32439cfa9af2868bef5b77770" title="Effettua la lettura di un singolo indirizzo di memoria." alt="" coords="485,56,696,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa97bd0d8c960f957f6c6a47d6b502dd8" title="Effettua la lettura di un intero segmento di memoria." alt="" coords="483,107,698,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="485,157,697,184"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="483,208,699,235"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a148019e3414b8e81a6dd33386c049f29" title="Effettua la lettura dell&#39;intera memoria del chip." alt="" coords="238,107,415,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="219,157,435,184"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="237,208,416,235"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,208,171,235"/>
 </map>
 </div>
@@ -1616,7 +1623,7 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#aec3f3ef2003e8b11f473d4b2bf09b24d">EEPROMManager::outputEnable</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01151">1151</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01212">1212</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1675,19 +1682,20 @@ Here is the caller graph for this function:</div>
 <dd>
 <a class="el" href="class_e_e_p_r_o_m_manager.html#ac333af96fc01883b9adebfc9b8700446">EEPROMManager::writeEnable</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01173">1173</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l01234">1234</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_e_e_p_r_o_m_manager_aeb38a6b5c19e4adb39bbcf362f08ce02_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_aeb38a6b5c19e4adb39bbcf362f08ce02_icgraph" alt=""/></div>
 <map name="class_e_e_p_r_o_m_manager_aeb38a6b5c19e4adb39bbcf362f08ce02_icgraph" id="class_e_e_p_r_o_m_manager_aeb38a6b5c19e4adb39bbcf362f08ce02_icgraph">
-<area shape="rect" title="Cambia lo stato del segnale di write enable verso il chip." alt="" coords="709,81,936,108"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="457,5,649,32"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#acb0cbf0481dc424f236d1b312d0bd268" title="Inizializzatore stabile." alt="" coords="476,56,631,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="447,107,659,133"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="445,157,661,184"/>
-<area shape="rect" href="_e_e_p_r_o_m_programmer_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="281,56,335,83"/>
-<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,157,397,184"/>
+<area shape="rect" title="Cambia lo stato del segnale di write enable verso il chip." alt="" coords="747,81,973,108"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#adfdb0fece69f1722b6fe85e6b0562bde" title="Effettua la formattazione della memoria del chip." alt="" coords="495,5,687,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#acb0cbf0481dc424f236d1b312d0bd268" title="Inizializzatore stabile." alt="" coords="513,56,668,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="485,107,697,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a75bc6da9c92c79d169c172d854ae4448" title="Effettua la scrittura di un intero segmento di memoria." alt="" coords="483,157,699,184"/>
+<area shape="rect" href="_e_e_p_r_o_m_programmer_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="299,56,354,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="219,107,435,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a0d1413187f2761faef59a9fe09ebf4c6" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="237,157,416,184"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,157,171,184"/>
 </map>
 </div>
@@ -1784,6 +1792,15 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#aeb38a6b5c19e4adb39bbcf362f08ce02" title="Cambia lo stato del segnale di write enable verso il chip." alt="" coords="265,208,492,235"/>
 </map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_icgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_icgraph" alt=""/></div>
+<map name="class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_icgraph" id="class_e_e_p_r_o_m_manager_aa9bae4af8125e22716b8ae21b1ec3e90_icgraph">
+<area shape="rect" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="269,5,481,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#ab5161ceb594613c87cd2359bd94875dd" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="5,5,221,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1854,6 +1871,83 @@ Here is the caller graph for this function:</div>
 <map name="class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6_icgraph" id="class_e_e_p_r_o_m_manager_a0d1413187f2761faef59a9fe09ebf4c6_icgraph">
 <area shape="rect" title="Effettua la scrittura dell&#39;intera memoria del chip." alt="" coords="219,5,397,32"/>
 <area shape="rect" href="class_e_e_p_r_o_m_manager.html#a23ddca0bf363d06f2546bc090ece2067" title="Effettua la formattazione della memoria del chip." alt="" coords="5,5,171,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab5161ceb594613c87cd2359bd94875dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5161ceb594613c87cd2359bd94875dd">&#9670;&nbsp;</a></span>writeAssistive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EEPROMManager::writeAssistive </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>printingHeadStartPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Effettua la scrittura della sequenza di byte specificata nella memoria del chip. </p>
+<p>Il seguente metodo effettua la scrittura nella memoria del chip della sequenza di byte specificata, partendo a scrivere dalla posizione specificata per la testina di stampa (situata sul primo indirizzo di memoria che verrà scritto).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>La sequenza di byte da scrivere nella memoria del chip </td></tr>
+    <tr><td class="paramname">bytes</td><td>La quantità di byte presenti nella sequenza fornita </td></tr>
+    <tr><td class="paramname">printingHeadStartPosition</td><td>La posizione di partenza della testina di stampa</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>L'inizializzazione deve essere già stata eseguita</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_e_e_p_r_o_m_manager.html#ac9684363ad84b018ab85121e2f94b6d3">EEPROMManager::hasBeenInit</a> </dd>
+<dd>
+<a class="el" href="class_e_e_p_r_o_m_manager.html#a0e43ea279fa5b58d79deba7d4fe62e16">EEPROMManager::LOWEST_VALID_DATA_VALUE</a> </dd>
+<dd>
+<a class="el" href="class_e_e_p_r_o_m_manager.html#a83421cdd18eb39598af0ddaa57775a01">EEPROMManager::HIGHEST_VALID_DATA_VALUE</a> </dd>
+<dd>
+<a class="el" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria.">EEPROMManager::writeAddress()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html#l00956">956</a> of file <a class="el" href="_e_e_p_r_o_m_programmer_8cpp_source.html">EEPROMProgrammer.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd_cgraph.png" border="0" usemap="#class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd_cgraph" alt=""/></div>
+<map name="class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd_cgraph" id="class_e_e_p_r_o_m_manager_ab5161ceb594613c87cd2359bd94875dd_cgraph">
+<area shape="rect" title="Effettua la scrittura della sequenza di byte specificata nella memoria del chip." alt="" coords="5,107,221,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aa9bae4af8125e22716b8ae21b1ec3e90" title="Effettua la scrittura di un singolo indirizzo di memoria." alt="" coords="269,107,481,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a8d2076266a99cc5f6cd94f6fcca660d7" title="Controlla se l&#39;indirizzo base specificato si riferisce ad un segmento readonly." alt="" coords="542,5,743,32"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a2c8f18767067d27e3e90256b8070a4ac" title="Imposta il valore specificato sui pin IO." alt="" coords="565,56,720,83"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a9ee8c63564876db6614f32b57598ae64" title="Seleziona l&#39;indirizzo specificato." alt="" coords="541,107,744,133"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#a162d0b0b8d6787c1f3e599237f328d11" title="Cambia lo stato dei pin IO dal punto di vista del controllore." alt="" coords="545,157,740,184"/>
+<area shape="rect" href="class_e_e_p_r_o_m_manager.html#aeb38a6b5c19e4adb39bbcf362f08ce02" title="Cambia lo stato del segnale di write enable verso il chip." alt="" coords="529,208,756,235"/>
 </map>
 </div>
 
