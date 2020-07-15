@@ -1,0 +1,2161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="class_e_e_p_r_o_m_manager" kind="class" language="C++" prot="public">
+    <compoundname>EEPROMManager</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ReadMode</name>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a33c08bf0705a42cbb818c6003d5872e4" prot="public">
+          <name>_DEC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a56886f12cba476e8c0fa9eb7671f78e4" prot="public">
+          <name>_HEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a62a0a2703cbd680749414bb6f443094b" prot="public">
+          <name>_BIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a331e594fbdb55ceb0e3e92fbd9dca4e9" prot="public">
+          <name>_OCT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a5fb1f955b45e38e31789286a1790398d" prot="public">
+          <name>ALL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerazione rappresentante le diverse modalità di interpretazione dei dati letti. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" kindref="member">EEPROMManager::resultStringBuilder()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="294" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="295" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DataIOState</name>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae" prot="public">
+          <name>_INPUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e" prot="public">
+          <name>_OUTPUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerazione rappresentante le diverse modalità di funzionamento attribuibili ai pin IO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="314" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="315" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ClearMode</name>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aaca25c85ba6a216c41500a41e220a1f29" prot="public">
+          <name>LOWEST_VALUE_FILL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aa588786b014ebeb380f8de79dc9e1e85e" prot="public">
+          <name>HIGHEST_VALUE_FILL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerazione rappresentante le diverse modalità di formattazione della memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a23ddca0bf363d06f2546bc090ece2067" kindref="member">EEPROMManager::clear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="330" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="331" bodyend="334"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>ResultStringBuilderSpecification</name>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea169472dc7d0f2cba83924ee6c184528f" prot="private">
+          <name>INCLUDE_HEADER_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea736d84ab5ad31dbe44a199ded2dc8518" prot="private">
+          <name>NOT_INCLUDE_HEADER_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerazione rappresentante le diverse modalità di formattazione dell&apos;output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>EEPROMMangaer::resultStringBuilder() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="345" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="346" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>FormatTarget</name>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285a7ad4905b4543ab4a1637dd23c50e36ce" prot="private">
+          <name>HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285abba4002db78141aef015d0d10af5a410" prot="private">
+          <name>NOT_HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerazione rappresentante i diversi target interessati dalla formattazione dell&apos;output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" kindref="member">EEPROMManager::format()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="361" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="362" bodyend="365"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::TIME_WAIT_READ</definition>
+        <argsstring></argsstring>
+        <name>TIME_WAIT_READ</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il tempo che trascorre tra l&apos;invio del segnale di output enable al chip e l&apos;effettiva presenza di dati campionabili sui pin di IO </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="88" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="88" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::TIME_RECOVERY_FROM_READ</definition>
+        <argsstring></argsstring>
+        <name>TIME_RECOVERY_FROM_READ</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante per quanto tempo il chip risulta inibito dopo il completamento di una lettura (completata nel momento in cui viene disattivato l&apos;output enable) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="96" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="96" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::TIME_HOLD_WRITE_SIGNAL</definition>
+        <argsstring></argsstring>
+        <name>TIME_HOLD_WRITE_SIGNAL</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante per quanto tempo bisogna tenere attivo il segnale write enable per far effettivamente iniziare un ciclo di scrittura al chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="106" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="106" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::TIME_RECOVERY_FROM_WRITE</definition>
+        <argsstring></argsstring>
+        <name>TIME_RECOVERY_FROM_WRITE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante per quanto tempo il chip risulta inibito dopo il completamento di una scrittura (completata nel momento in cui viene completato un intero ciclo di scrittura) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="114" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="114" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::IMPRECISION</definition>
+        <argsstring></argsstring>
+        <name>IMPRECISION</name>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante approssimativamente la possibile imprecisione del chip in termini di temporizzazione </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="121" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="121" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::ADDRESSING_PIN</definition>
+        <argsstring></argsstring>
+        <name>ADDRESSING_PIN</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il numero di pin di indirizzamento da cui è composto il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="128" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="128" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="460" endline="492">init</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::DATA_EXCHANGING_PIN</definition>
+        <argsstring></argsstring>
+        <name>DATA_EXCHANGING_PIN</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il numero di pin di IO da cui è composto il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="135" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="135" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1452" endline="1464">sample</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1665" endline="1680">put</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::SEGMENT_DEPTH</definition>
+        <argsstring></argsstring>
+        <name>SEGMENT_DEPTH</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante la profondità di ogni singolo segmento di memoria (serie di singoli indirizzi di memoria) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="142" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="142" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a148019e3414b8e81a6dd33386c049f29" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="687" endline="701">readAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1700" endline="1741">isReadonly</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a09d1add1a5afb3b303b827283be17c9a" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool EEPROMManager::READONLY_SEGMENTS_ALLOWED</definition>
+        <argsstring></argsstring>
+        <name>READONLY_SEGMENTS_ALLOWED</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante lo stato di abilitazione del permesso di presenza di segmenti readonly </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="149" column="27" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="149" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1700" endline="1741">isReadonly</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a1e016ce8f3ffae2f037259585d644fcc" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::READONLY_SEGMENTS</definition>
+        <argsstring></argsstring>
+        <name>READONLY_SEGMENTS</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il numero di segmenti readonly attivi </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="157" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="157" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1700" endline="1741">isReadonly</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a1257f0f058e6042adbf9d7a0833d396e" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::PADDING_CHECK_ONE</definition>
+        <argsstring></argsstring>
+        <name>PADDING_CHECK_ONE</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna utilizzata per eseguire il padding dell&apos;output</para>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" kindref="member">EEPROMManager::format()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="181" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="181" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1610" endline="1645">format</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a506cba0eee0824b11dba967fc7d56d89" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::PADDING_CHECK_TWO</definition>
+        <argsstring></argsstring>
+        <name>PADDING_CHECK_TWO</name>
+        <initializer>= 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna utilizzata per eseguire il padding dell&apos;output</para>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" kindref="member">EEPROMManager::format()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="189" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="189" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1610" endline="1645">format</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::ADDRESSES</definition>
+        <argsstring></argsstring>
+        <name>ADDRESSES</name>
+        <initializer>= pow(2, <ref refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" kindref="member">ADDRESSING_PIN</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il numero di indirizzi totali (i quali non sono tutti raggiungibili. Quelli raggiungibili risiedono nel range 0 <ndash/> (ADDRESSES - 1)) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="199" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="199" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a148019e3414b8e81a6dd33386c049f29" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="687" endline="701">readAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::LOWEST_ADDRESS</definition>
+        <argsstring></argsstring>
+        <name>LOWEST_ADDRESS</name>
+        <initializer>= <ref refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" kindref="member">ADDRESSES</ref> - 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante l&apos;indirizzo più basso (con valore algebricamente più alto) raggiungibile </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="206" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="206" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::HIGHEST_ADDRESS</definition>
+        <argsstring></argsstring>
+        <name>HIGHEST_ADDRESS</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante l&apos;indirizzo più alto (con valore algebricamente più basso) raggiungibile </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="213" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="213" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a406eefedbc38888ff7bcf907f6421070" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::VALID_DATA_VALUES</definition>
+        <argsstring></argsstring>
+        <name>VALID_DATA_VALUES</name>
+        <initializer>= pow(2, <ref refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" kindref="member">DATA_EXCHANGING_PIN</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il numero di valori validi realizzabili con il numero di bit del chip (non tutti utilizzabili. Quelli realizzabili risiedono nel range 0 <ndash/> (VALID_DATA_VALUES - 1)) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="222" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::LOWEST_VALID_DATA_VALUE</definition>
+        <argsstring></argsstring>
+        <name>LOWEST_VALID_DATA_VALUE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il valore algebricamente più basso realizzabile con il numero di bit del chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="229" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="229" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1057" endline="1098">writeAssistive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int EEPROMManager::HIGHEST_VALID_DATA_VALUE</definition>
+        <argsstring></argsstring>
+        <name>HIGHEST_VALID_DATA_VALUE</name>
+        <initializer>= <ref refid="class_e_e_p_r_o_m_manager_1a406eefedbc38888ff7bcf907f6421070" kindref="member">VALID_DATA_VALUES</ref> - 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta una direttiva del preprocessore moderna indicante il valore algebricamente più alto realizzabile con il numero di bit del chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="236" column="26" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="236" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1057" endline="1098">writeAssistive</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1aec3f3ef2003e8b11f473d4b2bf09b24d" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int EEPROMManager::outputEnable</definition>
+        <argsstring></argsstring>
+        <name>outputEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta il pin utilizzato per l&apos;output del segnale di output enable verso il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="245" column="15" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1ac333af96fc01883b9adebfc9b8700446" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int EEPROMManager::writeEnable</definition>
+        <argsstring></argsstring>
+        <name>writeEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta il pin utilizzato per l&apos;output del segnale di write enable verso il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="252" column="15" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" prot="private" static="no" mutable="no">
+        <type>const int *</type>
+        <definition>const int* EEPROMManager::addresses</definition>
+        <argsstring></argsstring>
+        <name>addresses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta un array di pin utilizzati per l&apos;addressing verso il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="259" column="15" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="259" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a371505abc0c162862c33d6e4be1904f9" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="438" endline="443">~EEPROMManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" prot="private" static="no" mutable="no">
+        <type>const int *</type>
+        <definition>const int* EEPROMManager::dataIO</definition>
+        <argsstring></argsstring>
+        <name>dataIO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta un array di pin utilizzati per l&apos;IO di dati da e verso il chip </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="266" column="15" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="266" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a371505abc0c162862c33d6e4be1904f9" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="438" endline="443">~EEPROMManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" prot="private" static="no" mutable="no">
+        <type>const int *</type>
+        <definition>const int* EEPROMManager::readonlySegments</definition>
+        <argsstring></argsstring>
+        <name>readonlySegments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta un array di indirizzi base dei segmenti readonly attivi </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="273" column="15" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="273" bodyend="-1"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a371505abc0c162862c33d6e4be1904f9" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="438" endline="443">~EEPROMManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EEPROMManager::hasBeenInit</definition>
+        <argsstring></argsstring>
+        <name>hasBeenInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rappresenta un flag booelano indicante lo stato di inizializzazione dell&apos;oggetto &quot;this&quot; in questione </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="280" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a440d6d0bdb386e711e607cf63b37ff2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EEPROMManager::EEPROMManager</definition>
+        <argsstring>()=delete</argsstring>
+        <name>EEPROMManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="369" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a563211ed439d2abce078483ea4a9bf88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EEPROMManager::EEPROMManager</definition>
+        <argsstring>(const int &amp;outputEnable, const int &amp;writeEnable, const int &amp;a0, const int &amp;a1, const int &amp;a2, const int &amp;a3, const int &amp;a4, const int &amp;a5, const int &amp;a6, const int &amp;a7, const int &amp;a8, const int &amp;a9, const int &amp;a10, const int &amp;io0, const int &amp;io1, const int &amp;io2, const int &amp;io3, const int &amp;io4, const int &amp;io5, const int &amp;io6, const int &amp;io7)</argsstring>
+        <name>EEPROMManager</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>outputEnable</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>writeEnable</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a0</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a2</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a3</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a4</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a5</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a6</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a7</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a8</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a9</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>a10</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io0</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io1</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io2</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io3</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io4</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io5</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io6</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>io7</declname>
+        </param>
+        <briefdescription>
+<para>Costruttore. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Inizializza tutte le risorse necessarie ad un oggetto di questa classe</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outputEnable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin utilizzato per l&apos;output del segnale di output enable verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>writeEnable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin utilizzato per l&apos;output del segnale di write enable verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a0 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a1 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a2 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a3 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a4 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a5 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a6</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a6 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a7</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a7 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a8 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a9</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a9 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a10</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di addressing a10 verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io0 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io1 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io2 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io3 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io4 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io5 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io6</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io6 da e verso il chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>io7</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>il pin di IO di dati io7 da e verso il chip</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aec3f3ef2003e8b11f473d4b2bf09b24d" kindref="member">EEPROMManager::outputEnable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac333af96fc01883b9adebfc9b8700446" kindref="member">EEPROMManager::writeEnable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" kindref="member">EEPROMManager::addresses</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a09d1add1a5afb3b303b827283be17c9a" kindref="member">EEPROMManager::READONLY_SEGMENTS_ALLOWED</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" kindref="member">EEPROMManager::readonlySegments</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>EEPROMManager::LIST_READONLY_SEGMENTS </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="408" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="408" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a371505abc0c162862c33d6e4be1904f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EEPROMManager::~EEPROMManager</definition>
+        <argsstring>()</argsstring>
+        <name>~EEPROMManager</name>
+        <briefdescription>
+<para>Distruttore. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Finalizza tutte le risorse usate da un oggetto di questa classe</para>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" kindref="member">EEPROMManager::addresses</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" kindref="member">EEPROMManager::readonlySegments</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="438" column="5" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="438" bodyend="443"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="259">addresses</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="266">dataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="273">readonlySegments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+<para>Inizializzatore stabile. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assegna valori stabili alle risorse HW/SW che necessitano di un valore forzato per il corretto funzionamento-</para>
+<para><simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" kindref="member">EEPROMManager::setWriteEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aec3f3ef2003e8b11f473d4b2bf09b24d" kindref="member">EEPROMManager::outputEnable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac333af96fc01883b9adebfc9b8700446" kindref="member">EEPROMManager::writeEnable</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" kindref="member">EEPROMManager::ADDRESSING_PIN</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" kindref="member">EEPROMManager::addresses</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="460" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="460" bodyend="492"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="128">ADDRESSING_PIN</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1381" endline="1384">setWriteEnable</references>
+        <referencedby refid="_e_e_p_r_o_m_programmer_data_polling_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1744" endline="1755">setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::readAddress</definition>
+        <argsstring>(const int &amp;address, const EEPROMManager::ReadMode &amp;mode)</argsstring>
+        <name>readAddress</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> &amp;</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la lettura di un singolo indirizzo di memoria. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la lettura di un singolo indirizzo di memoria e stampa il risultato utilizzando l&apos;output standard.</para>
+<para><simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo di memoria da leggere </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La modalità di interpretazione dei dati letti</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" kindref="member">EEPROMManager::HIGHEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" kindref="member">EEPROMManager::LOWEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" kindref="member">EEPROMManager::setDataIO()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kindref="member">EEPROMManager::setAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" kindref="member">EEPROMManager::TIME_WAIT_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" kindref="member">EEPROMManager::IMPRECISION</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" kindref="member">EEPROMManager::sample()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" kindref="member">EEPROMManager::resultStringBuilder()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" kindref="member">EEPROMManager::ResultStringBuilderSpecification</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_READ</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="521" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="521" bodyend="575"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="213">HIGHEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="121">IMPRECISION</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea169472dc7d0f2cba83924ee6c184528f">INCLUDE_HEADER_INFO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="206">LOWEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1514" endline="1589">resultStringBuilder</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1452" endline="1464">sample</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="96">TIME_RECOVERY_FROM_READ</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="88">TIME_WAIT_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::readSegment</definition>
+        <argsstring>(const int &amp;baseAddress)</argsstring>
+        <name>readSegment</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>baseAddress</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la lettura di un intero segmento di memoria. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la lettura di un intero segmento di memoria e stampa il risultato utilizzando l&apos;output standard.</para>
+<para><simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>baseAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo base del segmento di memoria da leggere</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" kindref="member">EEPROMManager::HIGHEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" kindref="member">EEPROMManager::LOWEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" kindref="member">EEPROMManager::setDataIO()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kindref="member">EEPROMManager::setAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" kindref="member">EEPROMManager::TIME_WAIT_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" kindref="member">EEPROMManager::IMPRECISION</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" kindref="member">EEPROMManager::sample()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" kindref="member">EEPROMManager::resultStringBuilder()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" kindref="member">EEPROMManager::ResultStringBuilderSpecification</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" kindref="member">EEPROMManager::format()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285" kindref="member">EEPROMManager::FormatTarget</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="606" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="606" bodyend="670"/>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a56886f12cba476e8c0fa9eb7671f78e4">_HEX</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1610" endline="1645">format</references>
+        <references refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285a7ad4905b4543ab4a1637dd23c50e36ce">HEADER</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="213">HIGHEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="121">IMPRECISION</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="206">LOWEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285abba4002db78141aef015d0d10af5a410">NOT_HEADER</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea736d84ab5ad31dbe44a199ded2dc8518">NOT_INCLUDE_HEADER_INFO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1514" endline="1589">resultStringBuilder</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1452" endline="1464">sample</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="96">TIME_RECOVERY_FROM_READ</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="88">TIME_WAIT_READ</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a148019e3414b8e81a6dd33386c049f29" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="687" endline="701">readAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a148019e3414b8e81a6dd33386c049f29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::readAll</definition>
+        <argsstring>()</argsstring>
+        <name>readAll</name>
+        <briefdescription>
+<para>Effettua la lettura dell&apos;intera memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la lettura dell&apos;intera memoria del chip e stampa il risultato utilizzando l&apos;output standard.</para>
+<para><simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" kindref="member">EEPROMManager::ADDRESSES</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="687" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="687" bodyend="701"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="199">ADDRESSES</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::writeAddress</definition>
+        <argsstring>(const int &amp;address, const int &amp;data)</argsstring>
+        <name>writeAddress</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la scrittura di un singolo indirizzo di memoria. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la scrittura di un singolo indirizzo di memoria.</para>
+<para><simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo di memoria da scrivere </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore da scrivere</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" kindref="member">EEPROMManager::HIGHEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" kindref="member">EEPROMManager::LOWEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" kindref="member">EEPROMManager::setDataIO()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kindref="member">EEPROMManager::setAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" kindref="member">EEPROMManager::setWriteEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" kindref="member">EEPROMManager::TIME_WAIT_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" kindref="member">EEPROMManager::IMPRECISION</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" kindref="member">EEPROMManager::put()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" kindref="member">EEPROMManager::LOWEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" kindref="member">EEPROMManager::HIGHEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" kindref="member">EEPROMManager::isReadonly()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" kindref="member">EEPROMManager::TIME_HOLD_WRITE_SIGNAL</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" kindref="member">EEPROMManager::sampleLowLevel()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_WRITE</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="737" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="737" bodyend="846"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e">_OUTPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="213">HIGHEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="236">HIGHEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="121">IMPRECISION</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1700" endline="1741">isReadonly</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="229">LOWEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1665" endline="1680">put</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1483" endline="1486">sampleLowLevel</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1381" endline="1384">setWriteEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="106">TIME_HOLD_WRITE_SIGNAL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="96">TIME_RECOVERY_FROM_READ</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="114">TIME_RECOVERY_FROM_WRITE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="88">TIME_WAIT_READ</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1057" endline="1098">writeAssistive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::writeSegment</definition>
+        <argsstring>(const int &amp;baseAddress, const int &amp;data)</argsstring>
+        <name>writeSegment</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>baseAddress</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la scrittura di un intero segmento di memoria. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la scrittura di un intero segmento di memoria.</para>
+<para><simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>baseAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo base del segmento di memoria da scrivere </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore da scrivere</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" kindref="member">EEPROMManager::HIGHEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" kindref="member">EEPROMManager::LOWEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" kindref="member">EEPROMManager::setDataIO()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kindref="member">EEPROMManager::setAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" kindref="member">EEPROMManager::setWriteEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" kindref="member">EEPROMManager::TIME_WAIT_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" kindref="member">EEPROMManager::IMPRECISION</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" kindref="member">EEPROMManager::put()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" kindref="member">EEPROMManager::LOWEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" kindref="member">EEPROMManager::HIGHEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" kindref="member">EEPROMManager::isReadonly()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" kindref="member">EEPROMManager::TIME_HOLD_WRITE_SIGNAL</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" kindref="member">EEPROMManager::sampleLowLevel()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_WRITE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="880" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="880" bodyend="995"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e">_OUTPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="213">HIGHEST_ADDRESS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="236">HIGHEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="121">IMPRECISION</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1700" endline="1741">isReadonly</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="229">LOWEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1665" endline="1680">put</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1483" endline="1486">sampleLowLevel</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1381" endline="1384">setWriteEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="106">TIME_HOLD_WRITE_SIGNAL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="96">TIME_RECOVERY_FROM_READ</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="114">TIME_RECOVERY_FROM_WRITE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="88">TIME_WAIT_READ</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::writeAll</definition>
+        <argsstring>(const int &amp;data)</argsstring>
+        <name>writeAll</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la scrittura dell&apos;intera memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la scrittura dell&apos;intera memoria del chip.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore da scrivere</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" kindref="member">EEPROMManager::LOWEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" kindref="member">EEPROMManager::HIGHEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" kindref="member">EEPROMManager::ADDRESSES</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1014" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1014" bodyend="1037"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="199">ADDRESSES</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="236">HIGHEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="229">LOWEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a23ddca0bf363d06f2546bc090ece2067" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1119" endline="1146">clear</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::writeAssistive</definition>
+        <argsstring>(const char *data, const int &amp;bytes, int printingHeadStartPosition)</argsstring>
+        <name>writeAssistive</name>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>printingHeadStartPosition</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la scrittura della sequenza di byte specificata nella memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la scrittura nella memoria del chip della sequenza di byte specificata, partendo a scrivere dalla posizione specificata per la testina di stampa (situata sul primo indirizzo di memoria che verrà scritto).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La sequenza di byte da scrivere nella memoria del chip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La quantità di byte presenti nella sequenza fornita </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>printingHeadStartPosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La posizione di partenza della testina di stampa</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" kindref="member">EEPROMManager::LOWEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" kindref="member">EEPROMManager::HIGHEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1057" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1057" bodyend="1098"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="236">HIGHEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="229">LOWEST_VALID_DATA_VALUE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a23ddca0bf363d06f2546bc090ece2067" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::clear</definition>
+        <argsstring>(const EEPROMManager::ClearMode &amp;mode)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15a" kindref="member">EEPROMManager::ClearMode</ref> &amp;</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la formattazione della memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la formattazione della memoria del chip, causando la perdita di tutte le informazioni in esso contenute</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La modalità di formattazione della memoria del chip</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="attention"><para>Il processo di formattazione &quot;clear&quot; causa la perdita di tutte le informazioni contenute nella memoria del chip, eccetto per i segmenti readonly</para>
+</simplesect>
+<simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" kindref="member">EEPROMManager::writeAll()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15a" kindref="member">EEPROMManager::ClearMode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1119" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1119" bodyend="1146"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aa588786b014ebeb380f8de79dc9e1e85e">HIGHEST_VALUE_FILL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aaca25c85ba6a216c41500a41e220a1f29">LOWEST_VALUE_FILL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1014" endline="1037">writeAll</references>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::hardClear</definition>
+        <argsstring>(const EEPROMManager::ClearMode &amp;mode)</argsstring>
+        <name>hardClear</name>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15a" kindref="member">EEPROMManager::ClearMode</ref> &amp;</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Effettua la formattazione della memoria del chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua la formattazione della memoria del chip, causando la perdita di tutte le informazioni in esso contenute</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La modalità di formattazione della memoria del chip</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="attention"><para>Il processo di formattazione &quot;hardClear&quot; causa la perdita di tutte le informazioni contenute nella memoria del chip, compresi i i segmenti readonly</para>
+</simplesect>
+<simplesect kind="pre"><para>L&apos;inizializzazione deve essere già stata eseguita</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" kindref="member">EEPROMManager::hasBeenInit</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" kindref="member">EEPROMManager::HIGHEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" kindref="member">EEPROMManager::LOWEST_ADDRESS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" kindref="member">EEPROMManager::setDataIO()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" kindref="member">EEPROMManager::setAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" kindref="member">EEPROMManager::setWriteEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" kindref="member">EEPROMManager::TIME_WAIT_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" kindref="member">EEPROMManager::IMPRECISION</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" kindref="member">EEPROMManager::put()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_READ</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" kindref="member">EEPROMManager::LOWEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" kindref="member">EEPROMManager::HIGHEST_VALID_DATA_VALUE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" kindref="member">EEPROMManager::isReadonly()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" kindref="member">EEPROMManager::TIME_HOLD_WRITE_SIGNAL</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" kindref="member">EEPROMManager::setOutputEnable()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" kindref="member">EEPROMManager::sampleLowLevel()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" kindref="member">EEPROMManager::TIME_RECOVERY_FROM_WRITE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1184" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1184" bodyend="1302"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e">_OUTPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="199">ADDRESSES</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aa588786b014ebeb380f8de79dc9e1e85e">HIGHEST_VALUE_FILL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="121">IMPRECISION</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15aaca25c85ba6a216c41500a41e220a1f29">LOWEST_VALUE_FILL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1665" endline="1680">put</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1483" endline="1486">sampleLowLevel</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1323" endline="1338">setAddress</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1415" endline="1433">setDataIO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1359" endline="1362">setOutputEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1381" endline="1384">setWriteEnable</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="106">TIME_HOLD_WRITE_SIGNAL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="96">TIME_RECOVERY_FROM_READ</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="114">TIME_RECOVERY_FROM_WRITE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="88">TIME_WAIT_READ</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::setAddress</definition>
+        <argsstring>(int address)</argsstring>
+        <name>setAddress</name>
+        <param>
+          <type>int</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+<para>Seleziona l&apos;indirizzo specificato. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo seleziona l&apos;indirizzo specificato attraverso un processo di output di segnali sui bus in output dal controllore e in input al chip sui pin di addressing.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo di memoria da selezionare</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" kindref="member">EEPROMManager::ADDRESSING_PIN</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" kindref="member">EEPROMManager::addresses</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1323" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1323" bodyend="1338"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="128">ADDRESSING_PIN</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::setOutputEnable</definition>
+        <argsstring>(const bool &amp;state)</argsstring>
+        <name>setOutputEnable</name>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Cambia lo stato del segnale di output enable verso il chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo cambia lo stato del segnale di output enable verso il chip</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lo stato da impostare per il segnale di output enable verso il chip</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" kindref="member">EEPROMManager::init()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aec3f3ef2003e8b11f473d4b2bf09b24d" kindref="member">EEPROMManager::outputEnable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1359" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1359" bodyend="1362"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="460" endline="492">init</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::setWriteEnable</definition>
+        <argsstring>(const bool &amp;state)</argsstring>
+        <name>setWriteEnable</name>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Cambia lo stato del segnale di write enable verso il chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo cambia lo stato del segnale di write enable verso il chip</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lo stato da impostare per il segnale di write enable verso il chip</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" kindref="member">EEPROMManager::init()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ac333af96fc01883b9adebfc9b8700446" kindref="member">EEPROMManager::writeEnable</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1381" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1381" bodyend="1384"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="460" endline="492">init</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::setDataIO</definition>
+        <argsstring>(const DataIOState &amp;state)</argsstring>
+        <name>setDataIO</name>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">DataIOState</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Cambia lo stato dei pin IO dal punto di vista del controllore. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo cambia lo stato dei pin IO dal punto di vista del controllore:<itemizedlist>
+<listitem><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae" kindref="member">EEPROMManager::DataIOState::_INPUT</ref>: indica che il controllore riceve segnali provenienti in input dall&apos;esterno, dunque, il chip dovrebbe fornire segnali in output</para>
+</listitem><listitem><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e" kindref="member">EEPROMManager::DataIOState::_OUTPUT</ref>: indica che il controllore invia segnali in output verso l&apos;esterno, dunque, il chip dovrebbe accettare segnali in input.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lo stato da impostare per i pin IO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" kindref="member">EEPROMManager::DataIOState</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" kindref="member">EEPROMManager::DATA_EXCHANGING_PIN</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1415" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1415" bodyend="1433"/>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae">_INPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfaecc90c7b155d0201999feb7af9ab891e">_OUTPUT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="135">DATA_EXCHANGING_PIN</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double EEPROMManager::sample</definition>
+        <argsstring>()</argsstring>
+        <name>sample</name>
+        <briefdescription>
+<para>Effettua il campionamento dei dati in output dal chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua il campionamento dei dati in output dal chip. Dunque, il chip dovrebbe fornire segnali in output e il controllore accettare segnali in input.</para>
+<para><simplesect kind="pre"><para>I pin IO del controllore devono essere impostati su modalità <ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae" kindref="member">EEPROMManager::DataIOState::_INPUT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" kindref="member">EEPROMManager::DATA_EXCHANGING_PIN</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1452" column="12" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1452" bodyend="1464"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="135">DATA_EXCHANGING_PIN</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte EEPROMManager::sampleLowLevel</definition>
+        <argsstring>()</argsstring>
+        <name>sampleLowLevel</name>
+        <briefdescription>
+<para>Effettua il campionamento low level dei dati in output dal chip. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo effettua il campionamento solo del dato in uscita dal pin IO7 del chip EEPROM. Questo è necessario per implementare la tecnica del Data Polling (descritta nel dettaglio sopra).</para>
+<para><simplesect kind="pre"><para>I pin IO del controllore devono essere impostati su modalità <ref refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bfa1d89028fe6cc2e362504d2a31aac86ae" kindref="member">EEPROMManager::DataIOState::_INPUT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1483" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1483" bodyend="1486"/>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String EEPROMManager::resultStringBuilder</definition>
+        <argsstring>(const int &amp;address, const double &amp;sampleResult, const EEPROMManager::ReadMode &amp;mode, const EEPROMManager::ResultStringBuilderSpecification &amp;specification)</argsstring>
+        <name>resultStringBuilder</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>sampleResult</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> &amp;</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" kindref="member">EEPROMManager::ResultStringBuilderSpecification</ref> &amp;</type>
+          <declname>specification</declname>
+        </param>
+        <briefdescription>
+<para>Formatta i dati da visualizzare per ottenere un output a schermo più elegante e semplice da interpretare e permette di effettuare la conversione dei dati da visualizzare in basi differenti. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo formatta i dati da visualizzare per ottenere un output a schermo più elegante e semplice da interpretare. Inoltre permette di effettuare la conversione dei dati da visualizzare nelle seguenti basi:<itemizedlist>
+<listitem><para>DEC</para>
+</listitem><listitem><para>HEX</para>
+</listitem><listitem><para>OCT</para>
+</listitem><listitem><para>BIN</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo di memoria da includere come informazione nell&apos;output formattato </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sampleResult</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore letto dal chip da includere come informazione nell&apos;output formattato </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La modalità di interpretazione dei dati letti: la base </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>specification</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indica la presenza o meno di informazioni aggiuntive poste ad arricchire il significato dell&apos;output</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" kindref="member">EEPROMManager::ResultStringBuilderSpecification</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" kindref="member">EEPROMManager::ReadMode</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" kindref="member">EEPROMManager::readAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" kindref="member">EEPROMManager::readSegment()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1514" column="12" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1514" bodyend="1589"/>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a62a0a2703cbd680749414bb6f443094b">_BIN</references>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a33c08bf0705a42cbb818c6003d5872e4">_DEC</references>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a56886f12cba476e8c0fa9eb7671f78e4">_HEX</references>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a331e594fbdb55ceb0e3e92fbd9dca4e9">_OCT</references>
+        <references refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476a5fb1f955b45e38e31789286a1790398d">ALL</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea169472dc7d0f2cba83924ee6c184528f">INCLUDE_HEADER_INFO</references>
+        <references refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77eea736d84ab5ad31dbe44a199ded2dc8518">NOT_INCLUDE_HEADER_INFO</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="521" endline="575">readAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String EEPROMManager::format</definition>
+        <argsstring>(const int &amp;value, const EEPROMManager::FormatTarget &amp;target)</argsstring>
+        <name>format</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285" kindref="member">EEPROMManager::FormatTarget</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Formatta i dati da visualizzare per ottenere un output a schermo più elegante e semplice da interpretare. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo formatta i dati da visualizzare per ottenere un output a schermo più elegante e semplice da interpretare. Viene utilizzata la tecnica del padding, la quale consiste nell&apos;aggiunta di &quot;un
+numero variabile di zeri&quot; davanti ad altri valori numerici per ottenere un incolonnamento &quot;perfetto&quot;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore numerico al quale applicare un eventuale padding </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il target del padding</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285" kindref="member">EEPROMManager::FormatTarget</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a1257f0f058e6042adbf9d7a0833d396e" kindref="member">EEPROMManager::PADDING_CHECK_ONE</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a506cba0eee0824b11dba967fc7d56d89" kindref="member">EEPROMManager::PADDING_CHECK_TWO</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1610" column="12" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1610" bodyend="1645"/>
+        <references refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285a7ad4905b4543ab4a1637dd23c50e36ce">HEADER</references>
+        <references refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285abba4002db78141aef015d0d10af5a410">NOT_HEADER</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a1257f0f058e6042adbf9d7a0833d396e" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="181">PADDING_CHECK_ONE</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a506cba0eee0824b11dba967fc7d56d89" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="189">PADDING_CHECK_TWO</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="606" endline="670">readSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EEPROMManager::put</definition>
+        <argsstring>(int data)</argsstring>
+        <name>put</name>
+        <param>
+          <type>int</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Imposta il valore specificato sui pin IO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo imposta il valore specificato sui pin IO, scomponendolo nei singoli bit da cui è composto e assegnando ciascuno di essi ad un rispettivo pin IO (rispettando la sequenza MSB - LSB). Dunque, ogni singolo bit avrà il proprio bus e il proprio pin IO.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Il valore da impostare</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" kindref="member">EEPROMManager::DATA_EXCHANGING_PIN</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" kindref="member">EEPROMManager::dataIO</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" kindref="member">EEPROMManager::hardClear()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1665" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1665" bodyend="1680"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="135">DATA_EXCHANGING_PIN</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="1184" endline="1302">hardClear</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EEPROMManager::isReadonly</definition>
+        <argsstring>(const int &amp;baseAddress)</argsstring>
+        <name>isReadonly</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>baseAddress</declname>
+        </param>
+        <briefdescription>
+<para>Controlla se l&apos;indirizzo base specificato si riferisce ad un segmento readonly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Il seguente metodo controlla se l&apos;indirizzo base specificato si riferisce ad un segmento readonly.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>baseAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>L&apos;indirizzo base da controllare</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a09d1add1a5afb3b303b827283be17c9a" kindref="member">EEPROMManager::READONLY_SEGMENTS_ALLOWED</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a1e016ce8f3ffae2f037259585d644fcc" kindref="member">EEPROMManager::READONLY_SEGMENTS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" kindref="member">EEPROMManager::readonlySegments</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" kindref="member">EEPROMManager::SEGMENT_DEPTH</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" kindref="member">EEPROMManager::writeAddress()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" kindref="member">EEPROMManager::writeSegment()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EEPROMProgrammerDataPolling.cpp" line="1700" column="10" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="1700" bodyend="1741"/>
+        <references refid="class_e_e_p_r_o_m_manager_1a1e016ce8f3ffae2f037259585d644fcc" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="157">READONLY_SEGMENTS</references>
+        <references refid="class_e_e_p_r_o_m_manager_1a09d1add1a5afb3b303b827283be17c9a" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="149">READONLY_SEGMENTS_ALLOWED</references>
+        <references refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="142">SEGMENT_DEPTH</references>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="737" endline="846">writeAddress</referencedby>
+        <referencedby refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" compoundref="_e_e_p_r_o_m_programmer_data_polling_8cpp" startline="880" endline="995">writeSegment</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Classe per la gestione di un chip EEPROM. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Grandieri Andrea <ulink url="mailto:g.andreus02@gmail.com">g.andreus02@gmail.com</ulink></para>
+</simplesect>
+La seguente classe fornisce tutti i metodi necessari alla realizzazione di un ambiente operativo per la gestione di un chip EEPROM. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>EEPROMManager</label>
+        <link refid="class_e_e_p_r_o_m_manager"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/EEPROMProgrammerDataPolling.cpp" line="67" column="1" bodyfile="src/EEPROMProgrammerDataPolling.cpp" bodystart="68" bodyend="1742"/>
+    <listofallmembers>
+      <member refid="class_e_e_p_r_o_m_manager_1a63651366121e66e5ed3c8858f203d797" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>ADDRESSES</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a8c43db4ba4e547fefa6382b95761342a" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>addresses</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a182b5c57e1bc01d6a026fa97c99229b7" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>ADDRESSING_PIN</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a23ddca0bf363d06f2546bc090ece2067" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>clear</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aef6d23a3d51d600b159b942d8703c15a" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>ClearMode</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a9f0651be0f7f180e991fac50740037d7" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>DATA_EXCHANGING_PIN</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a3765e7d80716eec86e8dc21fffb93b61" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>dataIO</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aa093893e9f801aa32df23f728b5c50bf" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>DataIOState</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a440d6d0bdb386e711e607cf63b37ff2c" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>EEPROMManager</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a563211ed439d2abce078483ea4a9bf88" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>EEPROMManager</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a3df1810c43b78b2e76a85660605686fc" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>format</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1adc5187d41e25c25d4e3cbdc312adb285" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>FormatTarget</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1adfdb0fece69f1722b6fe85e6b0562bde" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>hardClear</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ac9684363ad84b018ab85121e2f94b6d3" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>hasBeenInit</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a12f317646760f6016bbff761c7084ca3" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>HIGHEST_ADDRESS</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a83421cdd18eb39598af0ddaa57775a01" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>HIGHEST_VALID_DATA_VALUE</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a58ce6242b901f44feeb36c257bbefdc2" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>IMPRECISION</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1acb0cbf0481dc424f236d1b312d0bd268" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>init</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ac2cd13eefe1042c752c88722487c9189" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>isReadonly</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a5b8e797aba510f2e1ab0915caf4f83ff" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>LOWEST_ADDRESS</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a0e43ea279fa5b58d79deba7d4fe62e16" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>LOWEST_VALID_DATA_VALUE</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aec3f3ef2003e8b11f473d4b2bf09b24d" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>outputEnable</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a1257f0f058e6042adbf9d7a0833d396e" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>PADDING_CHECK_ONE</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a506cba0eee0824b11dba967fc7d56d89" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>PADDING_CHECK_TWO</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a2c8f18767067d27e3e90256b8070a4ac" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>put</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a595de5a32439cfa9af2868bef5b77770" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>readAddress</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a148019e3414b8e81a6dd33386c049f29" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>readAll</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1affa6ca02f4fc18d26f9ff4e03fb7e476" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>ReadMode</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a1e016ce8f3ffae2f037259585d644fcc" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>READONLY_SEGMENTS</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a09d1add1a5afb3b303b827283be17c9a" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>READONLY_SEGMENTS_ALLOWED</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a5bb3e649470bdec81bc8b87591eb4206" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>readonlySegments</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aa97bd0d8c960f957f6c6a47d6b502dd8" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>readSegment</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a381ae932693fc82dd81116a72f858100" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>resultStringBuilder</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aefdf301a33bb92088574ec60cbea77ee" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>ResultStringBuilderSpecification</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a7ef42a0d941408a893b924045fb2f4bb" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>sample</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a7f69a71d695d931a6959b23a8ec2fbc0" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>sampleLowLevel</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ab1713885200ce0df7e44727bf28536ac" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>SEGMENT_DEPTH</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a9ee8c63564876db6614f32b57598ae64" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>setAddress</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a162d0b0b8d6787c1f3e599237f328d11" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>setDataIO</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1acf8b109590c67a2041c97f094b12422d" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>setOutputEnable</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aeb38a6b5c19e4adb39bbcf362f08ce02" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>setWriteEnable</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a44dcf486880e00e173ae23dbf98479a3" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>TIME_HOLD_WRITE_SIGNAL</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1af3df05e28b30d46c6f8d831c07f1980c" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>TIME_RECOVERY_FROM_READ</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a7b0be694d212b14de6855b6de485e81b" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>TIME_RECOVERY_FROM_WRITE</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ad80b086ebac004e97395438fe8f74672" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>TIME_WAIT_READ</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a406eefedbc38888ff7bcf907f6421070" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>VALID_DATA_VALUES</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1aa9bae4af8125e22716b8ae21b1ec3e90" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>writeAddress</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a0d1413187f2761faef59a9fe09ebf4c6" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>writeAll</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ab5161ceb594613c87cd2359bd94875dd" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>writeAssistive</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1ac333af96fc01883b9adebfc9b8700446" prot="private" virt="non-virtual"><scope>EEPROMManager</scope><name>writeEnable</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a75bc6da9c92c79d169c172d854ae4448" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>writeSegment</name></member>
+      <member refid="class_e_e_p_r_o_m_manager_1a371505abc0c162862c33d6e4be1904f9" prot="public" virt="non-virtual"><scope>EEPROMManager</scope><name>~EEPROMManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
