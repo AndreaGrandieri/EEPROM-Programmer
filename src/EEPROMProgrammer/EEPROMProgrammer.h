@@ -1,3 +1,6 @@
+#ifndef EEPROMProgrammer_h__
+#define EEPROMProgrammer_h__
+
 /**
  * @author Grandieri Andrea g.andreus02@gmail.com
  * @version 1.0
@@ -857,3 +860,4 @@ private:
 	 */
 	bool isReadonly(const int& address);
 };
+#endif // EEPROMProgrammer_h__
