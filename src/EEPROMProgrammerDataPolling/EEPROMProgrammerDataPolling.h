@@ -1,3 +1,6 @@
+#ifndef EEPROMProgrammerDataPolling_h__
+#define EEPROMProgrammerDataPolling_h__
+
 /**
  * @author Grandieri Andrea g.andreus02@gmail.com
  * @version 1.0
@@ -905,3 +908,4 @@ private:
 	 */
 	bool isReadonly(const int& baseAddress);
 };
+#endif // EEPROMProgrammerDataPolling_h__
